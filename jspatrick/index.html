@@ -18,7 +18,15 @@
 
 <body>
     <!-- Navigation Sidebar -->
-    <nav class="nav-container hidden">
+    <nav class="nav-container">
+        <img src="./images/logo.png" alt="">
+        <ul>
+            <a selected="false" href="#title-container"><button class="button">Home</button></a>
+            <a selected="false" href="#about-container"><button class="button">About Me</button></a>
+            <a selected="false" href="#projects-container"><button class="button">Projects</button></a>
+            <a selected="false" href=""><button class="button">Evaluations</button></a>
+            <a selected="false" href=""><button class="button">Contact</button></a>
+        </ul>
         <label class="switch">
             <input type="checkbox" onclick="toggleTheme()">
             <span class="slider round"></span>
@@ -30,12 +38,12 @@
     </div>
     <main id="container">
         <!-- Title Heading -->
-        <section class="title-container">
+        <section class="title-container" id="title-container">
             <h1 class="title">JSPatrick</h1>
             <h2 class="sub-title">Junior Developer</h2>
         </section>
         <!-- About Me Section -->
-        <section class="about-me">
+        <section class="about-me" id="about-container">
             <main class="main">
                 <img src="./images/mypicture.png" alt="">
                 <div class="heading-container">
@@ -47,7 +55,7 @@
 
         </section>
         <!-- My Projects Section -->
-        <section class="my-projects">
+        <section class="my-projects" id="projects-container">
             <div class="heading-container">
                 <h1 class="heading">My Projects</h1>
                 <h2 class="sub-heading">Semester 2 in 2020</h2>
