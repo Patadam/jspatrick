@@ -10,6 +10,9 @@ var grid1 = document.querySelector("#grid1");
 var grid2 = document.querySelector("#grid2");
 var text = document.querySelector(".target");
 
+var player1Boats = 0;
+var player2Boats = 0;
+
 
 class gridsq {
     constructor(id, owner) {
@@ -19,6 +22,40 @@ class gridsq {
         this.clicked = false;
     }
 }
+
+function getUserBoats(user) {
+    if (user == "p1") {
+        var grid = player1Grid;
+        var list = player1List;
+        var boats = player1Boats;
+    } else {
+        var grid = player2Grid;
+        var list = player2List;
+        var boats = player2Boats;
+    };
+
+    toast = document.createElement("ul");
+    toast.classList.add("grid");
+    toast.id = ("toast");
+    console.log(toast);
+    for (i = 0; i < (width * height); i++) {
+        var widget = document.createElement("input");
+        widget.type = ("checkbox")
+        widget.setAttribute("location", i);
+        widget.classList.add("start");
+        widget.addEventListener("click", function() {
+            if (boats < 10) {
+                list[this.getAttribute("location")].boat = true;
+                boats++;
+            } else {
+                document.querySelector("#toast").classList.add("hidden");
+            }
+        });
+        toast.appendChild(widget);
+    }
+    document.documentElement.appendChild(toast);
+}
+
 
 function generateList(owner) {
     var list = [];
@@ -48,7 +85,6 @@ function updateGrid(owner, id, event) {
 }
 
 function generateGrid(owner) {
-    clearGrid(owner);
     grid1.classList.toggle("hidden");
     grid2.classList.toggle("hidden");
     if (owner == "p1") {
@@ -66,11 +102,10 @@ function generateGrid(owner) {
         widget.addEventListener("click", function() {
             if (list[this.getAttribute("location")].clicked == false) {
                 updateGrid(owner, this.getAttribute("location"), "clicked");
-                generateGrid(owner);
+                nextPlayer(owner);
             } else {
                 console.log("This spot has already been clicked")
-            }
-            l
+            };
         });
         if ((item.boat) && (item.clicked)) {
             widget.classList.add("hit");
@@ -88,3 +123,12 @@ player1List = generateList("p1");
 player1Grid = generateGrid("p1");
 player2List = generateList("p2");
 player2Grid = generateGrid("p2");
+
+function nextPlayer(currentPlayer) {
+    clearGrid(currentPlayer);
+    generateGrid(currentPlayer);
+}
+
+
+getUserBoats("p1");
+getUserBoats("p2");

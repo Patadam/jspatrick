@@ -41,9 +41,18 @@ main {
   height: 32px;
 }
 
+.grid input {
+  width: 32px;
+  height: 32px;
+}
+
 .clear {
   background: #f1f1f1;
   cursor: pointer;
+}
+
+.start {
+  background: lightblue;
 }
 
 .hit {
