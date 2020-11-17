@@ -7,3 +7,11 @@ function toggleTheme() {
         base.setAttribute("data-theme", "light");
     }
 }
+
+document.querySelector("#container").addEventListener("click", function () {
+    document.querySelector("nav").classList.add("hidden");
+});
+
+function loadMenu() {
+    document.querySelector("nav").classList.remove("hidden");
+}
