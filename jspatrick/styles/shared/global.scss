@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/* Styling Reset */
+* {
+    font-family: "Source Sans Pro";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables & Default Styling */
+
+html {
+    --bg: #F7F7F7;
+    --bg-panel: #f1f1f1;
+    --bg-panel-acent: #dedede;
+    --primary: #d16262;
+    --dark-text: #303030;
+    --mid-text: #505050;
+    --light-text: #707070;
+    --very-light-text: #909090;
+}
+
+/* SCSS Functions */
+@mixin gridCenter {
+    display: grid;
+    place-content: center;
+}
+
+@mixin gridCenterVertical {
+    display: grid;
+    place-content: center start;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    color: var(--dark-text);
+}
+
+h1 {
+    font-size: clamp(42px, 64px, 72px);
+    font-weight: bold;
+}
+
+h2 {
+    font-size: clamp(36px, 42px, 52px);
+    font-weight: bold;
+}
+
+h3 {
+    font-size: clamp(28px, 32px, 32px);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: clamp(24px, 28px, 32px);
+    font-weight: 600;
+    color: var(--mid-text)
+}
+
+/* */
+body {
+    background: var(--bg);
+
+}
+
+.colour {
+    color: var(--primary);
+}

@@ -1,2 +1,126 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+/* Styling Reset */
+* {
+  font-family: "Source Sans Pro";
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Variables & Default Styling */
+html {
+  --bg: #F7F7F7;
+  --bg-panel: #f1f1f1;
+  --bg-panel-acent: #dedede;
+  --primary: #d16262;
+  --dark-text: #303030;
+  --mid-text: #505050;
+  --light-text: #707070;
+  --very-light-text: #909090;
+}
+
+/* SCSS Functions */
+/* Headings */
+h1,
+h2,
+h3 {
+  color: var(--dark-text);
+}
+
+h1 {
+  font-size: clamp(42px, 64px, 72px);
+  font-weight: bold;
+}
+
+h2 {
+  font-size: clamp(36px, 42px, 52px);
+  font-weight: bold;
+}
+
+h3 {
+  font-size: clamp(28px, 32px, 32px);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: clamp(24px, 28px, 32px);
+  font-weight: 600;
+  color: var(--mid-text);
+}
+
+/* */
+body {
+  background: var(--bg);
+}
+
+.colour {
+  color: var(--primary);
+}
+
+.background {
+  position: absolute;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
+}
+
+.background svg {
+  position: absolute;
+}
+
+.background .cls-1 {
+  fill: var(--primary);
+}
+
+.background #tl {
+  top: 0;
+  left: 0;
+}
+
+.background #tr {
+  top: 0;
+  right: 0;
+}
+
+.background #bl {
+  bottom: 0;
+  left: 0;
+}
+
+.background #br {
+  bottom: 0;
+  right: 0;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  min-height: 100vh;
+  -ms-grid-columns: minmax(100px, 200px) 1fr minmax(100px, 200px);
+      grid-template-columns: minmax(100px, 200px) 1fr minmax(100px, 200px);
+  -ms-grid-rows: (minmax(800px, 100vh))[4];
+      grid-template-rows: repeat(4, minmax(800px, 100vh));
+}
+
+.title {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  display: -ms-grid;
+  display: grid;
+  place-content: center start;
+}
+
+.title .sub-intro h4 {
+  color: var(--dark-text);
+}
+
+.projects {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+}
 /*# sourceMappingURL=index.css.map */
