@@ -58,36 +58,26 @@ body {
   color: var(--primary);
 }
 
-.background {
-  position: absolute;
-  grid-column: 1/-1;
-  grid-row: 1/-1;
-}
-
-.background svg {
+img {
   position: absolute;
 }
 
-.background .cls-1 {
-  fill: var(--primary);
-}
-
-.background #tl {
+#tl {
   top: 0;
   left: 0;
 }
 
-.background #tr {
+#tr {
   top: 0;
   right: 0;
 }
 
-.background #bl {
+#bl {
   bottom: 0;
   left: 0;
 }
 
-.background #br {
+#br {
   bottom: 0;
   right: 0;
 }

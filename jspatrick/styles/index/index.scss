@@ -1,37 +1,29 @@
 @import "./../shared/global.scss";
 
-.background {
+.background {}
+
+img {
     position: absolute;
-    grid-column: 1/-1;
-    grid-row: 1/-1;
+}
 
-    svg {
-        position: absolute;
-    }
+#tl {
+    top: 0;
+    left: 0;
+}
 
-    .cls-1 {
-        fill: var(--primary);
-    }
+#tr {
+    top: 0;
+    right: 0;
+}
 
-    #tl {
-        top: 0;
-        left: 0;
-    }
+#bl {
+    bottom: 0;
+    left: 0
+}
 
-    #tr {
-        top: 0;
-        right: 0;
-    }
-
-    #bl {
-        bottom: 0;
-        left: 0
-    }
-
-    #br {
-        bottom: 0;
-        right: 0;
-    }
+#br {
+    bottom: 0;
+    right: 0;
 }
 
 
