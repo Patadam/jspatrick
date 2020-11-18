@@ -1,17 +1,20 @@
 @import "./../shared/global.scss";
 
-.background {}
+
+
 
 img {
     position: absolute;
 }
 
 #tl {
+
     top: 0;
     left: 0;
 }
 
 #tr {
+    position: absolute;
     top: 0;
     right: 0;
 }
@@ -22,14 +25,14 @@ img {
 }
 
 #br {
-    bottom: 0;
+    bottom: cacl((3200 - 100vh));
     right: 0;
 }
-
 
 body {
     display: grid;
     min-height: 100vh;
+    height: 3200px;
     grid-template-columns: minmax(100px, 200px) 1fr minmax(100px, 200px);
     grid-template-rows: repeat(4, minmax(800px, 100vh));
 }
