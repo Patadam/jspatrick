@@ -21,6 +21,18 @@ html {
   --very-light-text: #909090;
 }
 
+html[data-theme="dark"] {
+  --bg: #303030;
+  --bg-panel: #404040;
+  --bg-panel-acent: #505050;
+  --outline: #505050;
+  --primary: #F15E5E;
+  --dark-text: #DEDEDE;
+  --mid-text: #c1c1c1;
+  --light-text: #b5b5b5;
+  --very-light-text: #909090;
+}
+
 /* SCSS Functions */
 /* Headings */
 h1,
@@ -54,6 +66,10 @@ h4 {
 .h4-dark {
   font-size: clamp(24px, 28px, 32px);
   font-weight: 700;
+  color: var(--dark-text);
+}
+
+p {
   color: var(--dark-text);
 }
 
