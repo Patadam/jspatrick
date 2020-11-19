@@ -22,6 +22,7 @@ html {
     --mid-text: #505050;
     --light-text: #707070;
     --very-light-text: #909090;
+    --secondary: #98B3E6;
 }
 
 html[data-theme="dark"] {
@@ -34,6 +35,7 @@ html[data-theme="dark"] {
     --mid-text: #c1c1c1;
     --light-text: #b5b5b5;
     --very-light-text: #909090;
+    --secondary: #98B3E6;
 }
 
 
@@ -90,8 +92,12 @@ p {
     color: var(--dark-text);
 }
 
-p[class="light"] {
+.light {
     color: var(--mid-text);
+}
+
+.semibold {
+    font-weight: 600;
 }
 
 

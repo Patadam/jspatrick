@@ -13,11 +13,26 @@ html {
   --bg: #F7F7F7;
   --bg-panel: #f1f1f1;
   --bg-panel-acent: #dedede;
+  --outline: #c1c1c1;
   --primary: #d16262;
   --dark-text: #303030;
   --mid-text: #505050;
   --light-text: #707070;
   --very-light-text: #909090;
+  --secondary: #98B3E6;
+}
+
+html[data-theme="dark"] {
+  --bg: #303030;
+  --bg-panel: #404040;
+  --bg-panel-acent: #505050;
+  --outline: #505050;
+  --primary: #F15E5E;
+  --dark-text: #DEDEDE;
+  --mid-text: #c1c1c1;
+  --light-text: #b5b5b5;
+  --very-light-text: #909090;
+  --secondary: #98B3E6;
 }
 
 /* SCSS Functions */
@@ -41,6 +56,7 @@ h2 {
 h3 {
   font-size: clamp(28px, 32px, 32px);
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 h4 {
@@ -55,8 +71,16 @@ h4 {
   color: var(--dark-text);
 }
 
-p .light {
+p {
+  color: var(--dark-text);
+}
+
+.light {
   color: var(--mid-text);
+}
+
+.semibold {
+  font-weight: 600;
 }
 
 /* */
@@ -71,8 +95,9 @@ body {
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 4fr 1fr;
-      grid-template-rows: 1fr 4fr 1fr;
+  -ms-grid-rows: minmax(max-content, 130px) 1fr auto;
+      grid-template-rows: minmax(-webkit-max-content, 130px) 1fr auto;
+      grid-template-rows: minmax(max-content, 130px) 1fr auto;
 }
 
 .header {
@@ -96,10 +121,13 @@ body {
   display: -ms-grid;
   display: grid;
   place-content: center;
-  display: grid;
-  -ms-grid-columns: (minmax(380px, 420px))[2];
-      grid-template-columns: repeat(2, minmax(380px, 420px));
-  gap: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .list {
@@ -108,7 +136,7 @@ body {
   padding: 1.5rem;
   background: var(--bg-panel);
   width: 340px;
-  height: 350px;
+  min-height: 70vh;
   border-radius: 8px;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
@@ -119,17 +147,51 @@ body {
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
+  gap: 0.2rem;
 }
 
-.list .tasks button .check {
+.list .tasks .task-widget {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto auto;
+      grid-template-columns: 1fr auto auto;
+  position: relative;
+  background: var(--bg);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
+  place-items: center start;
+  padding: 0.2rem 0.4rem 0.2rem 1rem;
+  gap: 4px;
+}
+
+.list .tasks .check,
+.list .tasks .remove {
+  width: 32px;
+  height: 32px;
+  outline: none;
+  border: none;
+  color: var(--bg);
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.list .tasks .check {
   background: #6BC1A1;
 }
 
-.list .tasks button .remove {
+.list .tasks .remove {
   background: #D48B8B;
 }
 
-.list button {
+.list button[class="new"] {
   position: absolute;
   bottom: 2rem;
   left: 50%;
@@ -152,7 +214,7 @@ body {
 }
 
 .add {
-  position: absolute;
+  position: fixed;
   bottom: 6%;
   right: 3%;
   border-radius: 100%;
@@ -173,5 +235,52 @@ body {
   display: grid;
   place-content: center;
   font-size: 32px;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.edit-popup {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  z-index: 99;
+  padding: 0.2rem;
+  -webkit-transform: translate(-0.5rem, -0.3rem);
+          transform: translate(-0.5rem, -0.3rem);
+  gap: 4px;
+  background: var(--bg-panel);
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  width: 280px;
+}
+
+.edit-popup input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--primary);
+  padding: 0.2rem;
+  border-radius: 4px;
+  color: var(--mid-text);
+}
+
+.edit-popup button {
+  outline: none;
+  border: none;
+  background: var(--outline);
+  font-weight: 600;
+  color: var(--bg);
+  padding: 0.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-popup button:hover {
+  background: var(--secondary);
 }
 /*# sourceMappingURL=todo.css.map */

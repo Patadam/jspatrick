@@ -14,6 +14,10 @@
 </head>
 
 <body id="todo">
+    <div class="edit-popup hidden">
+        <input type="text" name="task-input" id="input">
+        <button onclick="taskChange()">Update</button>
+    </div>
     <header class="header">
         <h4 class="h4-dark">Todo List</h4>
     </header>
@@ -25,26 +29,23 @@
     <div class="add" onclick="newList()">
         <i class="material-icons">add</i>
     </div>
-    <footer class="footer">
-        <p class="light">v2020.0.1<br>Patrick Richardson © 2020</p>
-    </footer>
     <!-- Templates -->
-    <template>
+    <template id="template-list">
         <div class="list">
-            <h4>List</h4>
-            <p>Description</p>
+            <h4 onclick="updateTask(this)">My List</h4>
+            <p onclick="updateTask(this)">Full of Great Things!</p>
             <ul class="tasks">
                 
             </ul>
-            <button>New Task!</button>
+            <button class="new" onclick="newTask(this)">New Task!</button>
         </div>
         
     </template>
-    <template>
-        <div class="task-widget">
-            <p>text</p>
-            <button class="check"><i class="material-icons">check</i></button>
-            <button class="remove"><i class="material-icons">remove</i></button>
+    <template id="template-task">
+        <div class="task-widget" >
+            <p class="semibold light" onclick="updateTask(this)">New Task! - Click Me!</p>
+            <button onclick="completeTask(this)" class="check"><i class="material-icons">check</i></button>
+            <button onclick="removeTask(this)" class="remove"><i class="material-icons">remove</i></button>
         </div>
     </template>
     <!-- Import External Javascript -->
