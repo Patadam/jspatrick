@@ -23,7 +23,7 @@
     </header>
     <main class="main">
         <ul class="grid">
-            
+
         </ul>
     </main>
     <div class="add" onclick="newList()">
@@ -39,13 +39,12 @@
             </ul>
             <button class="new" onclick="newTask(this)">New Task!</button>
         </div>
-        
     </template>
     <template id="template-task">
         <div class="task-widget" >
             <p class="semibold light" onclick="updateTask(this)">New Task! - Click Me!</p>
             <button onclick="completeTask(this)" class="check"><i class="material-icons">check</i></button>
-            <button onclick="removeTask(this)" class="remove"><i class="material-icons">remove</i></button>
+            <button onclick="removeTask(this)" class="remove"><i class="material-icons">delete</i></button>
         </div>
     </template>
     <!-- Import External Javascript -->
