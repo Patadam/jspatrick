@@ -13,6 +13,7 @@ html {
   --bg: #F7F7F7;
   --bg-panel: #f1f1f1;
   --bg-panel-acent: #dedede;
+  --outline: #c1c1c1;
   --primary: #d16262;
   --dark-text: #303030;
   --mid-text: #505050;
@@ -41,6 +42,7 @@ h2 {
 h3 {
   font-size: clamp(28px, 32px, 32px);
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 h4 {
@@ -55,7 +57,7 @@ h4 {
   color: var(--dark-text);
 }
 
-p .light {
+p[class="light"] {
   color: var(--mid-text);
 }
 
