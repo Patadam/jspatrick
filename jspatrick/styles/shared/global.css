@@ -49,6 +49,16 @@ h4 {
   color: var(--mid-text);
 }
 
+.h4-dark {
+  font-size: clamp(24px, 28px, 32px);
+  font-weight: 700;
+  color: var(--dark-text);
+}
+
+p .light {
+  color: var(--mid-text);
+}
+
 /* */
 body {
   background: var(--bg);

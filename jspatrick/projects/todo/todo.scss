@@ -1,0 +1,85 @@
+@import "./../../styles/shared/global.scss";
+body {
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+}
+
+.header {
+    position: absolute;
+    left: 3%;
+    top: 6%;
+    padding: 1rem 1rem 1rem 2rem;
+    border-left: 3px solid var(--primary);
+}
+
+.main {
+    @include gridCenterVertical();
+    grid-row: 2;
+    margin-left: 3rem;
+}
+
+.grid {
+    @include gridCenter();
+    display: grid;
+    grid-template-columns: repeat(2, minmax(380px, 420px));
+    gap: 2rem;
+}
+
+.list {
+    position: relative;
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-panel);
+    width: 340px;
+    height: 350px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    .tasks {
+        display: grid;
+        grid-template-columns: 1fr;
+        button .check {
+            background: #6BC1A1;
+        }
+        button .remove {
+            background: #D48B8B;
+        }
+    }
+    button {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 75%;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--primary);
+        outline: none;
+        border: none;
+        color: var(--bg);
+        font-weight: 600;
+    }
+}
+
+.footer {
+    position: fixed;
+    bottom: 6%;
+    left: 3%;
+}
+
+.add {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+    border-radius: 100%;
+    background: var(--primary);
+    width: 64px;
+    height: 64px;
+    color: var(--bg);
+    @include gridCenter();
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    i {
+        @include gridCenter();
+        font-size: 32px;
+    }
+}

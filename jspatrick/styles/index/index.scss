@@ -1,14 +1,8 @@
-@import "./../shared/global.scss";
-
-
-
-
 img {
     position: absolute;
 }
 
 #tl {
-
     top: 0;
     left: 0;
 }
@@ -37,13 +31,9 @@ body {
     grid-template-rows: repeat(4, minmax(800px, 100vh));
 }
 
-
-
-
 .title {
     grid-column: 2/3;
     @include gridCenterVertical();
-
     .sub-intro h4 {
         color: var(--dark-text);
     }
