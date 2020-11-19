@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Solver</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="notification-popup">
+        <h3>How Many Questions do you want?</h3>
+        <input id="popup-input-field" type="text">
+        <span id="alert-toast" class="hidden-element">You must enter a proper number</span>
+        <h3 id="difficulty-text">Select a difficulty</h3>
+        <div class="difficulty-container">
+            <input type="checkbox" name="difficulty" id="checkbox-hard">
+            <label id="label-hard" for="checkbox-hard">Hard</label>
+        </div>
+        <div class="range-container">
+            <label for="min-range-field" class="range-label">Min Number</label>
+            <input type="text" id="min-range-field">
+            <label for="max-range-field" class="range-label">Max Number</label>
+            <input type="text" id="max-range-field">
+            <span id="alert-toast-range" class="hidden-element">You must enter a proper number</span>
+        </div>
+
+        <button id="popup-input-btn">I'm Ready to Play!</button>
+    </div>
+    <h2 class="sub-title"><a style="text-decoration: none;" href="../../index.html">(#1) Maths Solver</a></h2>
+
+    <div class="main-container">
+        <h1 class="title info-text-red">Maths Solver</h1>
+        <h1 id="content"><span id="num1-span">___</span><span id="method-span"> + </span> <span
+                id="num2-span">256</span><span>
+                = </span><span id="result-span">512</span></h1>
+        <input id="input-field" type="text" class="">
+        <button id="input-btn">Answer</button>
+    </div>
+
+    <div class="info-container">
+        <h3 class="info-text">Difficulty: <span id="info-difficulty" class="info-text-red">waiting...</span></h3>
+        <h3 class="info-text">Question: <span id="info-question" class="info-text-red">waiting...</span></h3>
+        <h3 class="info-text">Success Rate: <span id="info-success" class="info-text-red">waiting...</span>
+        </h3>
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

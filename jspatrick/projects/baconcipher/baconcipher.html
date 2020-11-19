@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Bacon Cipher</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="sub-title"><a href="./../../index.html">(#6) Bacon Cipher</a></h1>
+        <h1 class="title color-red">Bacon Cipher</h1>
+    </header>
+    <main>
+        <div class="container-left">
+            <div class="container-top container-left-widget">
+                <h1 class="container-left-title" id="title-message">Enter message here</h1>
+                <textarea name="message" id="input-message" cols="100" rows="4" class="input-field"></textarea>
+            </div>
+            <div class="container-bottom container-left-widget">
+                <h1 class="container-left-title" id="title-mask">Enter mask here</h1>
+                <textarea name="mask" id="input-mask" cols="100" rows="4" class="input-field"></textarea>
+            </div>
+        </div>
+        <div class="container-right">
+            <div class="container-encryption container-right-widget">
+                <div class="container-header">
+                    <h1>Encrpytion</h1>
+                </div>
+                <div class="container-footer">
+                    <div class="container-footer-check">
+                        <input type="checkbox" name="addMask" id="checkbox-mask" class="checkbox">
+                        <label for="addMask" class="checkbox-label">Mask text?</label>
+                    </div>
+                    <button id="encrypt-btn" class="button">Encrypt</button>
+                </div>
+            </div>
+            <div class="container-decryption container-right-widget">
+                <div class="container-header">
+                    <h1>Decryption</h1>
+                </div>
+                <div class="container-footer">
+                    <button id="decrypt-btn" class="button">Decrypt</button>
+                </div>
+            </div>
+        </div>
+        <div class="output-container">
+            <h1 class="container-left-title" id="output-title">Output</h1>
+            <p id="output">waiting..</p>
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

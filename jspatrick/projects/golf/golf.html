@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>JS Golf</title>
+</head>
+
+<body>
+    <div id="notification" class="hidden-element">
+        <h1>Do you want to play again?</h1>
+        <button>Play!</button>
+    </div>
+    <header>
+        <h1 class="sub-title"><a href="./../../index.html">(#2) JS Golf</a></h1>
+        <h1 class="title color-red">JS Golf</h1>
+    </header>
+    <div id="top-right-container">
+        <div class="distance-widget">
+            <h1 class="widget-title">Distance from Hole:</h1>
+            <h1 class="content" id="content-distance">152m</h1>
+        </div>
+        <div class="clubs-widget">
+            <h2 class="widget-subtitle">Avaliable Clubs:</h2>
+            <ul class="widget-ul-container">
+                <li class="widget-li">Driver ( 150m - 225m )</li>
+                <li class="widget-li">5 Iron ( 75m - 125m )</li>
+                <li class="widget-li">Putter ( 0m - 25m )</li>
+            </ul>
+        </div>
+    </div>
+    <div id="sidebar-container">
+        <img src="./awards.png" alt="">
+    </div>
+    <div id="info-container">
+        <h3 class="info-text">Hole Distance: <span id="info-distance" class="info-text-red">waiting...</span></h3>
+        <h3 class="info-text">Strokes: <span id="info-strokes" class="info-text-red">waiting...</span></h3>
+        <h3 class="info-text">Most recent award: <span id="info-award" class="info-text-red">waiting...</span></h3>
+        <h3 class="info-text">Games Played: <span id="info-games-played" class="info-text-red">waiting...</span></h3>
+    </div>
+    <main>
+        <h1 class="widget-title">Your last hit was:</h1>
+        <h1 class="content" id="content-hit-distance">12m</h1>
+        <h3 class="sub-info">You are now <span id="content-distance-span">152m</span> from the hole</h3>
+        <h3 class="sub-info-end hidden-element">You scored a <span id="sub-info-end-score">+9</span> and recieved: <span
+                id="sub-info-end-award"></span></h3>
+        <h1 class="widget-subtitle">Select your next club</h1>
+        <ul class="widget-ul-container button-list">
+            <button class="button" id="driver-btn">Driver</button>
+            <button class="button" id="5iron-btn">5 Iron</button>
+            <button class="button" id="putter-btn">Putter</button>
+        </ul>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
