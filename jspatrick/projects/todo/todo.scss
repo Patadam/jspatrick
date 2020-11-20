@@ -106,7 +106,7 @@ body {
     background: var(--primary);
     width: 64px;
     height: 64px;
-    color: var(--bg);
+    color: var(--button);
     @include gridCenter();
     cursor: pointer;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);

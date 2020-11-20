@@ -177,7 +177,7 @@ body {
   background: var(--primary);
   outline: none;
   border: none;
-  color: var(--bg);
+  color: var(--button);
   font-weight: 700;
   -ms-grid-row: 2;
   grid-row: 2/2;
@@ -414,7 +414,7 @@ body {
   background: var(--primary);
   width: 64px;
   height: 64px;
-  color: var(--bg);
+  color: var(--button);
   display: -ms-grid;
   display: grid;
   place-content: center;
