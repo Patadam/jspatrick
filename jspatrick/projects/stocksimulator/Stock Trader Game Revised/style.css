@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', roboto;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    background: url("./background.png");
+}
+
+.section {}
+
+.header-container {
+    position: absolute;
+    left: 7%;
+    top: 7%;
+}
+
+.heading {
+    font-size: 42px;
+    color: #7DA2A9;
+}
+
+.sub-heading {
+    font-size: 20px;
+    color: #505050;
+}
+
+.top-info-container {
+    position: absolute;
+    top: 7%;
+    right: 7%;
+}
+
+.main-container {
+    margin: 1rem;
+}
+
+.bottom-info-container {
+    display: grid;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.info-list {
+    list-style: none;
+    text-align: center;
+    margin: 1rem;
+}
+
+.info-list .item {
+    padding-bottom: 0.25rem;
+}
+
+span {
+    font-weight: 600;
+    color: #151515;
+}
+
+.popup-alert-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    background: #f1f1f1;
+    padding: 1rem;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.floating-cp {
+    background: #fff;
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    min-width: 30%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.action-button {
+    padding: 0.4rem 1.6rem;
+    margin: 0 0.15rem;
+    outline: none;
+    border: none;
+    background: rgb(203, 226, 203);
+    cursor: pointer;
+    color: #404040;
+    text-transform: lowercase;
+}
+
+.hidden {
+    display: none;
+}
+
+.info-heading {
+    font-size: 14px;
+    color: #303030;
+    padding: 0.4rem;
+}
+
+.info-main-title {
+    text-align: center;
+    font-size: 32px;
+    color: #303030;
+}
+
+.info-main-subtitle {
+    font-size: 16px;
+    color: #505050;
+    text-align: center;
+    font-weight: 400;
+}
+
+.input {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    outline: none;
+    border: 1px solid #cecece;
+    color: #505050;
+    text-align: center;
+}
+
+.history-container {
+    position: absolute;
+    left: 3%;
+    bottom: 5%;
+    background: #f7f7f730;
+    width: 25%;
+    height: 30%;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+#history-text {
+    font-size: 12px;
+    color: #909090;
+    font-weight: 10;
+}
+
+.upgrades-container {
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+}
+
+.upgrade-widget {
+    width: 48px;
+    height: 48px;
+    background: #7DA2A9;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.upgrade-widget i {
+    position: absolute;
+    color: white;
+    font-size: 32px;
+}
+
+.top-info-container .info-list .item {
+    padding-bottom: 0.5rem;
+}
+
+
+/*
+none
+none
+none
+none
+none
+none
+noen
+neon
+enone
+none
+neon
+none
+
+
+
+
+*/
+
+
+/* 
+.title {
+    color: crimson;
+    margin: 1rem 0;
+}
+
+#info {
+    font-size: 14px;
+    color: #303030;
+    font-weight: 550;
+    text-align: center;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+#input {
+    padding: 0.75rem;
+    outline: none;
+    background: #f1f1f1;
+    border: solid 1px #cecece;
+    margin: 1rem 0;
+}
+
+#hours {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    text-align: center;
+    color: #404040;
+}
+
+#hours span {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+h3 {
+    color: lightcoral;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+ul li {
+    margin: 0.25rem 0;
+}
+
+ul li span {
+    font-weight: 600;
+}
+
+ul button,
+#get-input button {
+    padding: 0.25rem 0.75rem;
+    outline: none;
+    background: #f1f1f1;
+    border: 1px solid #cecece;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#get-input {
+    display: grid;
+    place-items: center;
+}
+
+#get-input button {
+    margin-top: 0;
+    background: lightgreen;
+    padding: 0.4rem 1.5rem;
+} */

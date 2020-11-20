@@ -87,6 +87,19 @@ p {
   font-weight: 600;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.global-header {
+  position: absolute;
+  left: 3%;
+  top: 6%;
+  padding: 1rem 1rem 1rem 2rem;
+  border-left: 3px solid var(--primary);
+}
+
 /* */
 body {
   background: var(--bg);
