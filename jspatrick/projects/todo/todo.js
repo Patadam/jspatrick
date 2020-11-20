@@ -3,6 +3,12 @@ function start(call){
     call.parentElement.classList.add("hidden");
 }
 
+// Dark Theme Settings
+var base = document.querySelector("html");
+if (document.cookie.replace("data-theme=","") == "dark"){
+    base.setAttribute("data-theme", "dark");
+};
+
 var grid = document.querySelector(".grid");
 var input = document.querySelector("#input");
 
