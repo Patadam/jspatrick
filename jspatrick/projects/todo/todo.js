@@ -1,3 +1,8 @@
+// Global Start Function
+function start(call){
+    call.parentElement.classList.add("hidden");
+}
+
 var grid = document.querySelector(".grid");
 var input = document.querySelector("#input");
 
@@ -7,12 +12,10 @@ var activeEdit;
 // Creates a new list
 function newList() {
     var gridList = document.querySelectorAll(".grid .list");
- //if (gridList.length < 2) {
         var template = document.querySelector("#template-list");
         var copy = template.content.cloneNode(true);
         copy.querySelector("button").setAttribute("loc", gridList.length);
         grid.appendChild(copy);
-    //}
 };
 
 // Creates a new task in the calling list
