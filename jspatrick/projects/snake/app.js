@@ -1,3 +1,10 @@
+var base = document.querySelector("html");
+if (document.cookie.replace("data-theme=","") == "dark"){
+    base.setAttribute("data-theme", "dark");
+    document.querySelector(".switch input").checked = true;
+}
+
+
 // DOM Variable References
 var grid = document.querySelector("#grid");
 var list = document.querySelectorAll("#grid li");
