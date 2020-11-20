@@ -18,6 +18,7 @@ html {
     --bg-panel-acent: #dedede;
     --outline: #c1c1c1;
     --primary: #d16262;
+    --primary-alt: #F15E5E;
     --dark-text: #303030;
     --mid-text: #505050;
     --light-text: #707070;
@@ -31,6 +32,7 @@ html[data-theme="dark"] {
     --bg-panel-acent: #505050;
     --outline: #505050;
     --primary: #F15E5E;
+    --primary-alt: #d16262;
     --dark-text: #DEDEDE;
     --mid-text: #c1c1c1;
     --light-text: #b5b5b5;
@@ -111,4 +113,189 @@ body {
 
 .colour {
     color: var(--primary);
+}
+
+.global-widget {
+    width: 60%;
+    height: 38%;
+    background: var(--bg-panel);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: max-content 1fr;
+    gap: 1rem;
+
+    div:first-of-type {
+        margin-bottom: 2rem;
+    }
+
+    .options {
+        grid-row: 2/2;
+        grid-column: 1/1;
+        padding-right: 3rem;
+    }
+
+
+    P {
+        max-width: 100%;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    input:checked+.duo {
+        background: var(--secondary);
+    }
+
+    .duo {
+        background: var(--secondary);
+    }
+
+    .small {
+        font-size: 12px;
+        color: var(--light-text);
+    }
+
+    .small:last-of-type {
+        margin-left: 0.8rem;
+    }
+
+    .option-switch {
+        display: grid;
+        place-items: center start;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        margin-bottom: 0.8rem;
+        padding-left: 0.5rem;
+    }
+
+    .singular {
+        grid-column: -2;
+
+    }
+
+    button {
+        width: 85%;
+        height: 36px;
+        border-radius: 8px;
+        background: var(--primary);
+        outline: none;
+        border: none;
+        color: var(--bg);
+        font-weight: 700;
+        grid-row: 2/2;
+        grid-column: 2/2;
+        place-self: end center;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: var(--primary-alt);
+    }
+
+    .option-input {
+        display: grid;
+        place-items: center start;
+        grid-template-columns: 2fr 3fr;
+        margin-bottom: 0.8rem;
+    }
+
+    .input {
+        width: 100%;
+        outline: none;
+        border: none;
+        background: none;
+        border-bottom: 2px solid var(--outline);
+        padding: 0.4rem 0rem 0.2rem 0.4rem;
+        color: var(--light-text);
+    }
+
+    .input:focus-within {
+        border-bottom: 2px solid var(--mid-text);
+        color: var(--mid-text);
+    }
+}
+
+/* Switch CSS 
+The switch - the box around the slider */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #D1D1D1;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--primary);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round,
+.duo {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.hidden {
+    display: none;
+    visibility: hidden;
 }

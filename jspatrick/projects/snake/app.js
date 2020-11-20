@@ -1,8 +1,21 @@
+// Dark Theme Settings
 var base = document.querySelector("html");
 if (document.cookie.replace("data-theme=","") == "dark"){
     base.setAttribute("data-theme", "dark");
-}
+};
 
+// Start Widget 
+function start(call){
+    var tempSpeed = document.querySelector("#inputSpeedDOM").checked;
+    if (tempSpeed){
+        speed = (20);
+    } else{
+        speed = (150);
+    }
+    bodyCollision = document.querySelector("#inputCollisionDOM").checked;
+    call.parentElement.classList.add("hidden");
+    startGame();
+};
 
 // DOM Variable References
 var grid = document.querySelector("#grid");
@@ -197,6 +210,7 @@ function getDirection() {
             dir = (90);
         };
     } else {
+        // in theory this shouldn't work... but when I removed it. It broke it... and when I fixed it... It also broke. So it will stay here for now
         if (shortRoute = ('x')) {
             if (distanceToX < 0) {
                 dir = (90);

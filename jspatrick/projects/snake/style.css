@@ -2,13 +2,15 @@ html {
     --head: rgb(255, 169, 241);
     --bg: #efefef;
     --body: rgb(186, 236, 186);
+    --boundary: #909090;
 }
 
 html[data-theme="dark"] {
-    --head: rgb(185, 100, 171);
+    --head: rgb(185, 100, 100);
     --bg-dark: #303030;
     --bg: #505050;
     --body: rgb(95, 170, 95);
+    --boundary: #707070;
 }
 
 * {
@@ -84,7 +86,7 @@ body {
 }
 
 .boundary {
-    background: #909090 !important;
+    background: var(--boundary) !important;
 }
 
 .blur {
