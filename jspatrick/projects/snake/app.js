@@ -1,7 +1,6 @@
 var base = document.querySelector("html");
 if (document.cookie.replace("data-theme=","") == "dark"){
     base.setAttribute("data-theme", "dark");
-    document.querySelector(".switch input").checked = true;
 }
 
 
