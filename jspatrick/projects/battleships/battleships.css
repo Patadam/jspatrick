@@ -130,6 +130,7 @@ body {
       grid-template-rows: -webkit-max-content 1fr;
       grid-template-rows: max-content 1fr;
   gap: 1rem;
+  border-radius: 8px;
 }
 
 .global-widget div:first-of-type {
@@ -296,5 +297,13 @@ input:checked + .slider:before {
 .hidden {
   display: none;
   visibility: hidden;
+}
+
+#bs-info {
+  position: absolute;
+  top: 3rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 /*# sourceMappingURL=battleships.css.map */
