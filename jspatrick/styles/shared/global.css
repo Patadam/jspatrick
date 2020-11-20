@@ -177,7 +177,7 @@ body {
   background: var(--primary);
   outline: none;
   border: none;
-  color: var(--bg);
+  color: var(--button);
   font-weight: 700;
   -ms-grid-row: 2;
   grid-row: 2/2;
