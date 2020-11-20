@@ -20,16 +20,16 @@
         <h3 class="info-heading">Stonk Market Information</h3>
         <ul class="info-list">
             <li class="item" id="avaliable-stocksDOM">
-                Available Stocks: <br><span class="target">10</span>
+                Available Stocks: <br><span class="target">!!!</span>
             </li>
             <li class="item" id="maxStocksDOM">
-                Max Stonks: <br><span class="target">50</span>
+                Max Stonks: <br><span class="target">!!!</span>
             </li>
             <li class="item" id="currentStockDOM">
                 Current Stonk: <br><span class="target">Apple</span>
             </li>
             <li class="item" id="bankBalanceDOM">
-                Bank Balance: <br><span>$</span><span class="target">105</span>
+                Bank Balance: <br><span>$</span><span class="target">$$$</span>
             </li>
         </ul>
     </section>
@@ -57,11 +57,11 @@
         <h2 class="info-main-subtitle" id="popupTypeDOM">How many stocks do you want to <span class="target">buy</span></h2>
         <h3 class="info-heading" id="popupValueDOM">The Current Stock Value is: <span>$</span><span class="target">10</span></h3>
         <input type="text" class="input" type="number">
-        <button class="action-button" onclick="handleSubmitEvent()">Submit</button>
+        <button class="action-button" onclick="handleSubmitEvent(this)">Submit</button>
     </section>
     <section class="section history-container">
         <p id="history-text">
-            [12] You successfully purchased 15 shares for $15
+            [12] Game Started
         </p>
     </section>
     <section class="section upgrades-container">
@@ -73,37 +73,6 @@
         </div>
 
     </section>
-
-
-
-
-
-    <!-- 
-    <h1 class="title">The Stonk Simulator</h1>
-    <h2 id="info">This is Information Text</h2>
-    <div id="get-input" class="hidden">
-        <input type="text" name="" type="number" id="input">
-        <button onclick="handleSubmitEvent()">Submit</button>
-    </div>
-
-    <h3>Your Information:</h3>
-    <h3 id="hours">Hours Remaining <br><span>12</span></h3>
-    <ul>
-        <li id="stocks">Stocks: <span>0</span></li>
-        <li id="money">Balance: <span>$</span><span id="balance-target">10</span c></li>
-    </ul>
-    <h3>Current Traing Information:</h3>
-    <ul>
-        <li id="value">Current Stock Value: <span>$</span><span id="value-target">15</span></li>
-        <li>
-            <ul>
-                <button onclick="handleBuyEvent()">Buy</button>
-                <button onclick="handleSellEvent()">Sell</button>
-                <button onclick="handleTickEvent('full')">Wait an Hour</button>
-            </ul>
-        </li>
-    </ul> -->
-
     <script src="./app.js"></script>
 </body>
 

@@ -48,7 +48,6 @@ function taskChange(){
     activeEdit.innerHTML = input.value;
     input.value = "";
     popup.classList.add("hidden");
-    
 }
 
 // Completes a task by putting a line through it
