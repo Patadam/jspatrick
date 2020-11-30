@@ -1,21 +1,14 @@
-// Dark Theme Settings
-var base = document.querySelector("html");
-if (document.cookie.replace("data-theme=","") == "dark"){
-    base.setAttribute("data-theme", "dark");
-};
+// // Dark Theme Settings
+document.cookie.split(';').includes('data-theme=dark') ? document.querySelector("html").setAttribute("data-theme", "dark") : console.log("Default: Light Theme");
 
 // Start Widget 
-function start(call){
-    var tempSpeed = document.querySelector("#inputSpeedDOM").checked;
-    if (tempSpeed){
-        speed = (20);
-    } else{
-        speed = (150);
-    }
+function start(call) {
+    document.querySelector("#inputSpeedDOM").checked ? speed = 20 : speed = 150;
     bodyCollision = document.querySelector("#inputCollisionDOM").checked;
     call.parentElement.classList.add("hidden");
     startGame();
 };
+
 
 // DOM Variable References
 var grid = document.querySelector("#grid");
@@ -39,9 +32,9 @@ var introText = ("Speed: {speed} = {int}\nBody Collisions: {bodyCollision} = {bo
 
 // Functions // 
 // Math Random Function
-function randomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+const randomInt = (min, max) => (Math.floor(Math.random() * (max - min + 1)) + min);
+
+
 // updates the DOM objects
 function updateDOM() {
     grid = document.querySelector("#grid");
@@ -171,30 +164,40 @@ function getDirection() {
             point = (head - (distance));
         };
         // Checks for collision returns true if the path is clear
-        if (boundaries.includes(point) && distance == 1) {
-            return (false);
-        } else if (path.includes(point)) {
-            return (false)
-        } else {
-            return (true);
-        }
+        if (boundaries.includes(point) && distance == 1) return false;
+        if (path.includes(point)) return false;
+        return true;
     };
     // Find the distance to the x cord of the apple;
     distanceToX = (list[head].getAttribute("cord").split(",")[0] - list[apple].getAttribute("cord").split(",")[0]);
     distanceToY = (list[head].getAttribute("cord").split(",")[1] - list[apple].getAttribute("cord").split(",")[1]);
     tempX = distanceToX;
     tempY = distanceToY;
-    if (tempX < 0) {
-        tempX = tempX * -1;
-    };
-    if (tempY < 0) {
-        tempY = tempY * -1;
-    };
+
+    tempX < 0 ? tempX *= -1 : "";
+    tempY < 0 ? tempY *= -1 : "";
+    //console.log(`tempX: ${tempX}\n tempY: ${tempY}`)
+
+    tempX < tempY ? shortRoute = "x" : shortRoute = "y";
+
+    if ((list[head].getAttribute("cord").split(",")[0]) === (list[apple].getAttribute("cord").split(",")[0])) {
+        (head > apple && currentDirection) != 180 ? dir = 0 : (head < apple & currentDirection != 0) ? dir = 180 : "";
+    } else if ((list[head].getAttribute("cord").split(",")[1]) === (list[apple].getAttribute("cord").split(",")[1])) {
+        (head > apple && currentDirection != 90) ? dir = 270 : (head < apple & currentDirection != 270) ? dir = 90 : "";
+    } else {
+        //shortRoute == "y" ? distanceToY > 0 ? dir = 0 : dir = 180 : distanceToX < 0 ? dir = 90 : dir = 270;
+
+        (shortRoute === "y") ? ((list[apple].getAttribute("cord").split(",")[1] > list[head].getAttribute("cord").split(",")[1]) ? dir = 0 : dir = 180) : ((list[apple].getAttribute("cord").split(",")[0] > list[head].getAttribute("cord").split(",")[0]) ? dir = 270 : dir = 90);
+        //shortRoute === "y" ? (tempY > 0) ? dir = 0 : dir = 180 : (distanceToX < 0) ? dir = 90 : dir = 270;
+    }
+     
+    /*
     shortRoute = ("y");
     if (tempX < tempY) {
         shortRoute = ("x");
-    };
+    };*/
 
+    /*
     // head is on the same x Cord
     if ((list[head].getAttribute("cord").split(",")[0]) == (list[apple].getAttribute("cord").split(",")[0])) {
         if (head > apple && currentDirection != 180) {
@@ -225,6 +228,7 @@ function getDirection() {
             };
         };
     };
+    */
     // Prevents the pathfinding from traveling in a 180 degree turn
     if ((dir == 0) && (currentDirection == 180)) {
         dir = options[randomInt(0, options.length - 1)]
@@ -250,23 +254,17 @@ function handleMovement() {
     };
 };
 // checks for a collsion event
+
 function checkCollision() {
-    // Collision with boundary & body
-    if (boundaries.includes(head)) {
-        return (true);
-    };
-    if (path.includes(head) && (bodyCollision == true)) {
-        return (true);
-    };
+    if (boundaries.includes(head) || (path.includes(head) && (bodyCollision == true))) return true
 };
+
 // Updates the snake's path
 function updatePath() {
     // add a new data point to the path
     path.unshift(head);
     // if the path is greater than the score (snake length)
-    if (path.length >= score + 2) {
-        path.pop(0);
-    };
+    (path.length >= score + 2) ? path.pop(0): '';
 };
 // renders the snake
 function renderSnake() {
@@ -274,11 +272,10 @@ function renderSnake() {
         list[head].classList.add('head')
     } catch (err) {}
     for (part in path) {
-        if (part != 0) {
-            try {
-                list[path[part]].classList.add("body");
-            } catch (err) {};
-        }
+        if (part === 0) return
+        try {
+            list[path[part]].classList.add("body");
+        } catch (err) {};
     }
 };
 // Handles each frame of the game;
@@ -291,15 +288,11 @@ function handleFrameEvent() {
     handleMovement();
     // Check if you crashed or collided (died)
     if (checkCollision()) {
-        if (score > highscore) {
-            highscore = score;
-        }
+        (score > highscore) ? highscore = score: "";
         trials++;
         totalscore += score;
         console.clear();
-        console.log(introText);
-        console.log("Highscore: " + highscore);
-        console.log("Average: " + (totalscore / trials) + " @ (" + trials + ")")
+        console.log(`${introText}\nHighscore: ${highscore}\nAverage: ${totalscore/trials} @ (${trials})`)
         handleGameReset();
     };
     // Updates the body path
