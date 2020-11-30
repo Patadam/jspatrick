@@ -181,54 +181,14 @@ function getDirection() {
     tempX < tempY ? shortRoute = "x" : shortRoute = "y";
 
     if ((list[head].getAttribute("cord").split(",")[0]) === (list[apple].getAttribute("cord").split(",")[0])) {
-        (head > apple && currentDirection) != 180 ? dir = 0 : (head < apple & currentDirection != 0) ? dir = 180 : "";
+        //(head > apple && currentDirection) != 180 ? dir = 0 : (head < apple && currentDirection != 0) ? dir = 180 : "";
+        head < apple ? dir = 0 : dir = 180;
     } else if ((list[head].getAttribute("cord").split(",")[1]) === (list[apple].getAttribute("cord").split(",")[1])) {
-        (head > apple && currentDirection != 90) ? dir = 270 : (head < apple & currentDirection != 270) ? dir = 90 : "";
-    } else {
-        //shortRoute == "y" ? distanceToY > 0 ? dir = 0 : dir = 180 : distanceToX < 0 ? dir = 90 : dir = 270;
-
-        (shortRoute === "y") ? ((list[apple].getAttribute("cord").split(",")[1] > list[head].getAttribute("cord").split(",")[1]) ? dir = 0 : dir = 180) : ((list[apple].getAttribute("cord").split(",")[0] > list[head].getAttribute("cord").split(",")[0]) ? dir = 270 : dir = 90);
-        //shortRoute === "y" ? (tempY > 0) ? dir = 0 : dir = 180 : (distanceToX < 0) ? dir = 90 : dir = 270;
+        //(head > apple && currentDirection != 90) ? dir = 270: (head < apple && currentDirection != 270) ? dir = 90 : "";
+        head > apple ? dir = 270 : dir = 90;
+    } else{
+        shortRoute === "y" ? distanceToY > 0 ? dir = 0 : dir = 180 : distanceToX < 0 ? dir = 90 : dir = 270;
     }
-     
-    /*
-    shortRoute = ("y");
-    if (tempX < tempY) {
-        shortRoute = ("x");
-    };*/
-
-    /*
-    // head is on the same x Cord
-    if ((list[head].getAttribute("cord").split(",")[0]) == (list[apple].getAttribute("cord").split(",")[0])) {
-        if (head > apple && currentDirection != 180) {
-            dir = (0);
-        } else if (head < apple && currentDirection != 0) {
-            dir = (180);
-        };
-    } else if ((list[head].getAttribute("cord").split(",")[1]) == (list[apple].getAttribute("cord").split(",")[1])) {
-        // head is on the same y Cord
-        if (head > apple && currentDirection != 90) {
-            dir = (270);
-        } else if (head < apple && currentDirection != 270) {
-            dir = (90);
-        };
-    } else {
-        // in theory this shouldn't work... but when I removed it. It broke it... and when I fixed it... It also broke. So it will stay here for now
-        if (shortRoute = ('x')) {
-            if (distanceToX < 0) {
-                dir = (90);
-            } else {
-                dir = (270);
-            };
-        } else if (shortRoute = ("y")) {
-            if (distanceToY > 0) {
-                dir = (180);
-            } else {
-                dir = (0);
-            };
-        };
-    };
-    */
     // Prevents the pathfinding from traveling in a 180 degree turn
     if ((dir == 0) && (currentDirection == 180)) {
         dir = options[randomInt(0, options.length - 1)]
