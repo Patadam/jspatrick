@@ -302,192 +302,68 @@ input:checked + .slider:before {
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: minmax(max-content, 130px) 1fr auto;
-      grid-template-rows: minmax(-webkit-max-content, 130px) 1fr auto;
-      grid-template-rows: minmax(max-content, 130px) 1fr auto;
+  min-height: 100vh;
 }
 
-.header {
-  position: absolute;
-  left: 3%;
-  top: 6%;
-  padding: 1rem 1rem 1rem 2rem;
-  border-left: 3px solid var(--primary);
-}
-
-.main {
+#btd {
   display: -ms-grid;
   display: grid;
-  place-content: center start;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  margin-left: 3rem;
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.list {
-  position: relative;
-  margin: 1.5rem;
-  padding: 1.5rem;
-  background: var(--bg-panel);
-  width: 340px;
   min-height: 70vh;
-  border-radius: 8px;
+  background: #f1f1f1;
+  place-self: end center;
+}
+
+#btd .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (26px)[22];
+      grid-template-columns: repeat(22, 26px);
+  gap: 0.2rem;
+  padding: 0.4rem;
   -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
           box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
-}
-
-.list .tasks {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  padding-top: 1rem;
-  padding-bottom: 4rem;
-  gap: 0.2rem;
-}
-
-.list .tasks .task-widget {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto auto;
-      grid-template-columns: 1fr auto auto;
-  position: relative;
-  background: var(--bg);
-  border-radius: 4px;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
-          box-shadow: 0 0 5px rgba(0, 0, 0, 0.16);
-  place-items: center start;
-  padding: 0.2rem 0.4rem 0.2rem 1rem;
-  gap: 4px;
-}
-
-.list .tasks .check,
-.list .tasks .remove {
-  width: 32px;
-  height: 32px;
-  outline: none;
-  border: none;
-  color: var(--button);
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
-  cursor: pointer;
   border-radius: 4px;
 }
 
-.list .tasks .check {
-  background: #6BC1A1;
+#btd .widget {
+  height: 26px;
+  width: 26px;
+  background: lightblue;
 }
 
-.list .tasks .remove {
-  background: #D48B8B;
+#btd .CowFarmker {
+  background: lightcoral !important;
 }
 
-.list button[class="new"] {
+#btd .shop {
+  list-style: none;
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
-  width: 75%;
-  height: 36px;
-  border-radius: 8px;
-  background: var(--primary);
-  outline: none;
-  border: none;
-  color: var(--button);
-  font-weight: 600;
+  background: #f1f1f1;
+  left: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  display: -ms-grid;
+  display: grid;
+  gap: 1rem;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
-.footer {
-  position: fixed;
-  bottom: 6%;
-  left: 3%;
-}
-
-.add {
-  position: fixed;
-  bottom: 6%;
-  right: 3%;
-  border-radius: 100%;
-  background: var(--primary);
-  width: 64px;
-  height: 64px;
-  color: var(--button);
+#btd .shop li {
+  padding: 0.3rem;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
   display: -ms-grid;
   display: grid;
   place-content: center;
-  cursor: pointer;
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
-}
-
-.add i {
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
-  font-size: 32px;
-}
-
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-.edit-popup {
-  position: absolute;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr auto;
-      grid-template-columns: 1fr auto;
-  z-index: 99;
-  padding: 0.2rem;
-  -webkit-transform: translate(-0.5rem, -0.3rem);
-          transform: translate(-0.5rem, -0.3rem);
-  gap: 4px;
-  background: var(--bg-panel);
-  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
-  border-radius: 4px;
-  width: 280px;
-}
-
-.edit-popup input {
-  outline: none;
-  border: none;
-  border-bottom: 2px solid var(--primary);
-  padding: 0.2rem;
-  border-radius: 4px;
-  color: var(--mid-text);
-}
-
-.edit-popup button {
-  outline: none;
-  border: none;
-  background: var(--outline);
   font-weight: 600;
-  color: var(--bg);
-  padding: 0.2rem;
-  border-radius: 4px;
+  color: #404040;
+  background: #f7f7f7;
   cursor: pointer;
 }
 
-.edit-popup button:hover {
-  background: var(--secondary);
+#btd .shop li:hover {
+  background: #f1f1f1;
 }
-/*# sourceMappingURL=todo.css.map */
+/*# sourceMappingURL=btd.css.map */
