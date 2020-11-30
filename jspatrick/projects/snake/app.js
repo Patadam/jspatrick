@@ -176,9 +176,40 @@ function getDirection() {
 
     tempX < 0 ? tempX *= -1 : "";
     tempY < 0 ? tempY *= -1 : "";
-    //console.log(`tempX: ${tempX}\n tempY: ${tempY}`)
-
     tempX < tempY ? shortRoute = "x" : shortRoute = "y";
+
+
+    // head is on the same x Cord
+    if ((list[head].getAttribute("cord").split(",")[0]) == (list[apple].getAttribute("cord").split(",")[0])) {
+        if (head > apple && currentDirection != 180) {
+            dir = (0);
+        } else if (head < apple && currentDirection != 0) {
+            dir = (180);
+        };
+    } else if ((list[head].getAttribute("cord").split(",")[1]) == (list[apple].getAttribute("cord").split(",")[1])) {
+        // head is on the same y Cord
+        if (head > apple && currentDirection != 90) {
+            dir = (270);
+        } else if (head < apple && currentDirection != 270) {
+            dir = (90);
+        };
+    } else {
+        // in theory this shouldn't work... but when I removed it. It broke it... and when I fixed it... It also broke. So it will stay here for now
+        if (shortRoute = ('x')) {
+            if (distanceToX < 0) {
+                dir = (90);
+            } else {
+                dir = (270);
+            };
+        } else if (shortRoute = ("y")) {
+            if (distanceToY > 0) {
+                dir = (180);
+            } else {
+                dir = (0);
+            };
+        };
+    };
+    /*
 
     if ((list[head].getAttribute("cord").split(",")[0]) === (list[apple].getAttribute("cord").split(",")[0])) {
         //(head > apple && currentDirection) != 180 ? dir = 0 : (head < apple && currentDirection != 0) ? dir = 180 : "";
@@ -189,6 +220,9 @@ function getDirection() {
     } else{
         shortRoute === "y" ? distanceToY > 0 ? dir = 0 : dir = 180 : distanceToX < 0 ? dir = 90 : dir = 270;
     }
+    */
+
+
     // Prevents the pathfinding from traveling in a 180 degree turn
     if ((dir == 0) && (currentDirection == 180)) {
         dir = options[randomInt(0, options.length - 1)]
