@@ -97,6 +97,12 @@ button {
 }
 
 /* End Headlines & Typography */
+/* Global Hidden Styles */
+.--global-hidden {
+  display: none;
+  visibility: hidden;
+}
+
 .--global-body {
   min-height: 100vh;
 }
