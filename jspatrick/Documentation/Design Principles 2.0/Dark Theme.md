@@ -16,7 +16,7 @@ Depth: components express depth by displaying lighter surface colours
 Note: Reserve bright colours for smaller surfaces
 
 #### Surface Colour (Dark Grey)
-Hex: #121212
+Hex: #202020
 
 #### Error Colour
 Hex: #CF6679

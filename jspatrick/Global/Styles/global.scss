@@ -6,6 +6,42 @@
 /* Import External CSS Font Families */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/* Light Theme Settings */
+html {
+    --primary: #d16262;
+    --primary-light: #ff928f;
+    --primary-dark: #9c3338;
+    --secondary: #4d9cd1;
+    --secondary-light: #83cdff;
+    --secondary-dark: #006ea0;
+    --error: #B00020;
+    --surface: #F1F1F1;
+    --white: #F1F1F1;
+    --black: #202020;
+}
+
+/* Dark Theme Settings */
+html[data-theme=dark] {
+    --primary: #d16262;
+    --primary-light: #ff928f;
+    --primary-dark: #9c3338;
+    --secondary: #4d9cd1;
+    --secondary-light: #83cdff;
+    --secondary-dark: #006ea0;
+    --error: #CF6679;
+    --surface: #202020;
+    --white: #202020;
+    --black: #f1f1f1;
+}
+
+
+/* Global Style Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--black);
+}
 
 /* Headlines & Typography */
 h1 {
@@ -101,6 +137,11 @@ button {
     letter-spacing: 1.5px;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* End Headlines & Typography */
 
 /* Global Hidden Styles */
@@ -111,4 +152,15 @@ button {
 
 .--global-body {
     min-height: 100vh;
+    background: var(--surface);
+}
+
+
+/* Global Introduction Cross Project Heading */
+.--global-intro {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+    padding: 1rem 1rem 1rem 2rem;
+    border-left: 3px solid var(--primary);
 }

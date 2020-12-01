@@ -30,16 +30,16 @@ Hex: #B00020
 
 ## On Colours
 Description: “On” colors are primarily applied to text, iconography, and strokes.
-On Primary: #000
-On Secondary: #000
+On Primary: #202020
+On Secondary: #202020
 
-On Background: # 000
-On Surface: #000
+On Background: # 202020
+On Surface: #202020
 
-On Light: #000
-On Dark: #FFF
+On Light: #202020
+On Dark: #F1F1F1
 
-On Error: # FFF
+On Error: # F1F1F1
 
 ## Surface Colours
 

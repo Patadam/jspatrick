@@ -13,9 +13,23 @@
     <title>Title</title>
 </head>
 <body class="--global-body">
-    
+    <!-- Project Heading Here -->
+    <div class="--global-intro">
+        <h4><a href="/jspatrick/index.html">Project Title Here</a></h4>
+    </div>
+    <!-- End Project Heading Here -->
 
 
+
+
+    <!-- Templates Go Here -->
+    <template id="--global-alert-template">
+        <div class="--global-alert">
+            <h1>Alert</h1>
+            <p>Body</p>
+            <button onclick="globalHideSelf(this.parentElement)">Continue</button>
+        </div>
+    </template>
     <!-- Import External Javascript -->
     <script src="./MyJavascript.js"></script>
     <script src="/jspatrick/Global/Functions/global.js"></script>
