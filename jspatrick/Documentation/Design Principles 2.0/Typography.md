@@ -68,7 +68,7 @@ Letter spacing: 1.25px
 
 ## Caption
 Font: Raleway
-Weight: Nomrla
+Weight: Normal
 Size: 12px
 Letter spacing: 0.4px
 
