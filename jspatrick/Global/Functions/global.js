@@ -3,6 +3,9 @@
 /* All Global functions will be prefixed with globalFunction */
 /* All Global javascript should be functions */
 
+// Toggle the target objects hidden state
+const globalToggleHide = (target) => document.querySelector(target).classList.toggle("--global-hidden");
+
 // Hide Target Object (Targeting by class or ID "#id" or ".class")
 const globalHide = (target) => document.querySelectorAll(target).classList.add("--global-hidden");
 
