@@ -1,0 +1,12 @@
+/* This document contains the global styling */
+/* All Global Styles will be prefixed with --global */
+/* All Global Styles should be classes */
+/* Example:
+.--global-body {
+    content: "";
+}
+*/
+.--global-body {
+  content: "";
+}
+/*# sourceMappingURL=global.css.map */
