@@ -6,8 +6,8 @@
 <!-- HTML Head Section -->
 {% block head %} 
 <title>BTD</title>
-<link rel="stylesheet" href="{{url_for('static', filename='/projects/btd/btd.css')}}">
-<script defer src="{{url_for('static', filename='/projects/btd/btd.js')}}"></script>
+<link rel="stylesheet" href="/static/projects/btd/btd.css">
+<script defer src="/static/projects/btd/btd.js"></script>
 {% endblock %}
 
 
@@ -28,6 +28,5 @@
         <li onclick=shopSelected(this)>Cow Laser</li>
     </ul>
 </section>
-
 {% endblock %}
 

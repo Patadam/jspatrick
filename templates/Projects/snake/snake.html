@@ -6,8 +6,8 @@
 <!-- HTML Head Section -->
 {% block head %}
 <title>Snake</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='/projects/snake/snake.css')}}">
-<script defer src="{{url_for('static', filename='/projects/snake/snake.js')}}"></script>
+<link rel="stylesheet" href="/static/projects/snake/style.css">
+<script defer src="/static/projects/snake/app.js"></script>
 {% endblock %}
 
 
@@ -15,6 +15,10 @@
 
 <!-- HTML Body Section -->
 {% block body %}
+
+
+
+
 <div class="--global-widget">
     <div>
         <h4 class="semibold">JS Snake</h4>
