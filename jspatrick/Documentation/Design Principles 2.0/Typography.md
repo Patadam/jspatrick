@@ -1,7 +1,7 @@
 # Typography
 // Responsive Sizing can be completed using clamp(min,size,max)
 // The min size should be 1 headline lower (for most, not all) & max is the current listed size.
-
+// Fonts of size: 16px of greater should be responsively scalled as per this document.
 
 ## Headline 1
 Font: Roboto Slab
