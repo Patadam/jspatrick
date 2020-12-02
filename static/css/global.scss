@@ -184,3 +184,14 @@ a {
 .--global-main {
     @include globalGridCenter();
 }
+
+
+.--global-widget {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    background: blue;
+    height: 50vh;
+}

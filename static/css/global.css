@@ -169,4 +169,15 @@ a {
   display: grid;
   place-content: center;
 }
+
+.--global-widget {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 70vw;
+  background: blue;
+  height: 50vh;
+}
 /*# sourceMappingURL=global.css.map */
