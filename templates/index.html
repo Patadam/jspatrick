@@ -1,0 +1,131 @@
+
+
+{% block head %}
+<title>JS Patrick</title>
+<link rel="stylesheet" href="{{url_for('static', filename='/projects/index/index.css')}}">
+<script defer src="{{url_for('static', filename='/projects/index/index.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+  <!-- Background // Border Images -->
+  <img id="tl" src="./images/background-top-left.png" alt="">
+  <img id="tr" src="./images/background-top-right.png" alt="">
+  <img id="bl" src="./images/background-bottom-left.png" alt="">
+  <img id="br" src="./images/background-bottom-right.png" alt="">
+
+  <!-- Dark Theme Toggle -->
+  <div class="theme">
+      <label class="switch">
+          <input type="checkbox" onclick="toggleTheme()">
+          <span class="slider round"></span>
+      </label>
+  </div>
+
+
+  <section class="title">
+      <div class="introduction">
+          <h1 class="colour">I'm Patrick</h1>
+          <h2>Richardson</h2>
+      </div>
+      <div class="sub-intro">
+          <h4>Creator, Designer and Developer of <span class="colour">JS Patrick</span></h4>
+      </div>
+      <p>Learn more about my work and try out my projects!</p>
+  </section>
+  <section class="projects">
+      <div class="content">
+          <h3>My Projects!</h3>
+          <p>Find a mix and match of my various development project <br> completed over the last few months</p>
+          <ul class="project-highlights">
+              <a class="widget transition" href="./projects/snake/snake.html">
+                  <h4>JS Snake</h4>
+                  <p class="light">Explore the world of my Javascript Snake as it makes its way around my snake game using AI.</p>
+              </a>
+              <a class="widget transition" href="./projects/battleships/battleships.html">
+                  <h4>JS Battleships</h4>
+                  <p class="light">Play off against another player in a 1 Vs 1 Battleships match - who will rule the sea?</p>
+              </a>
+              <a class="widget transition" href="./projects/todo/todo.html">
+                  <h4>Todo List</h4>
+                  <p class="light">Get stuff done with help from Todo List to stay organised and on task.</p>
+              </a>
+              <a class="widget transition" href="./projects/webapp/webapp.html">
+                  <h4>Web Application</h4>
+                  <p class="light">Sometimes writing a description becomes hard, thats when you have a Web Application help.</p>
+              </a>
+          </ul>
+          <p>Or explore some of my older projects</p>
+          <ul class="project-list">
+              <a href="./projects/mathsolver/mathsolver.html" class="widget transition"><p class="light">Math Solver</p></a>
+              <a href="./projects/golf/golf.html" class="widget transition"><p class="light">JS Golf</p></a>
+              <a href="./projects/hangman/hangman.html" class="widget transition"><p class="light">JS Hangman</p></a>
+              <a href="./projects/cheque writer/chequewriter.html" class="widget transition"><p class="light">Cheque Writer</p></a>
+              <a href="./projects/baconcipher/baconcipher.html" class="widget transition"><p class="light">Bacon Cipher</p></a>
+              <a href="./projects/tictactoe/tictactoe.html" class="widget transition"><p class="light">Tic Tac Toe</p></a>
+              <a href="./projects/calculator/calculator.html" class="widget transition"><p class="light">Calculator</p></a>
+              <a href="./projects/counter/counter.html" class="widget transition"><p class="light">Counter</p></a>
+              <a href="./projects/stocksimulator/stocksimulator.html" class="widget transition"><p class="light">Stock Simulator</p></a>
+              <a href="./projects/timemachine/timemachine.html" class="widget transition"><p class="light">Time Machine</p></a>
+          </ul>
+      </div>
+  </section>
+  <section class="evaluation">
+      <header class="header">
+          <h4 class="h4-dark">How'd I Go?</h4>
+          <p>What was it like to develop these projects? and more <br> as I evaluate the time and effort required.</p>
+      </header>
+      <ul class="eval-list">
+          <li>
+              <i class="material-icons">question_answer</i>
+              <h4>What was the hardest problem that I fixed?</h4>
+              <p class="light">The hardest problem I fixed was my snake navigation system and pathfinding solution</p>
+          </li>
+          <li>
+              <i class="material-icons">question_answer</i>
+              <h4>How elegant & optimised & efficient is your solution?</h4>
+              <p class="light">My original system was ineffective and cluttered, whilst achieving minimal outcome. By redesigning the games fundamental core structure to include a grid system. I was able to then program the snake to properly utilise this grid navigation method and navigate using this method. This solution made the code cleaner, simpler and more effective and efficient.</p>
+          </li>
+          <br><br>
+          <li>
+              <i class="material-icons">question_answer</i>
+              <h4>What was the hardest problem that I couldn't solve?</h4>
+              <p class="light">successfully infiltrating Mr Hovels assignment collection prior to assignment distribution dates to gather intelligence and propagate necessary action planning processes required for the execution of critical infrastructure development programs to pre-establish the necessary assignment work prior to issuing of documentation officialising the program.</p>
+          </li>
+          <li>
+              <i class="material-icons">question_answer</i>
+              <h4>Why was this problem so troubling?</h4>
+              <p class="light">extreme stealth operational planning was required to correctly and safety negotiate the pre-planted traps preventing easy disbarment of intrusion prevention systems, with watch guards on duty much of time and limited capacity to execute critical mission functions at essentially propagated times, outside of the scoping range of standard investigation subtle press and undercover work - with failed attempts to negotiate ideal situations whereby the necessary information was not provided in a timely mannerism.</p>
+          </li>
+          <li>
+              <i class="material-icons">question_answer</i>
+              <h4>In simple colloquial language, how could I solve it?</h4>
+              <p class="light">Break in - steal it</p>
+          </li>
+      </ul>
+  </section>
+  <section class="conclusion">
+      <header class="header">
+          <h4 class="h4-dark">Where to next?</h4>
+          <p>After honing in my skills and learning so many development skills <br>
+              I'm ready to move onto the next stage & explore more!</p>
+      </header>
+      <div>
+          <i class="material-icons">explore</i>
+          <h4>Web Development as a Hobby</h4>
+          <p class="light">Looking to the future I see creating, designing and developing things for the web as an enjoyable hobby. As I continue to learn new frameworks and expand my knowledge of JavaScript and other languages.</p>
+          <p class="light">Over the next two years I plan to undertake senior studies in digital solutions to help me refine my skills and help me work towards the ultimate goal of studying digital technologies at university and becoming a full time technology worker!</p>
+      </div>
+  </section>
+  <section class="departure">
+      <h3>Thanks for staying!</h3>
+      <p>Thanks for sticking around and exploring my page.
+          More things to come as I continue to grow my portfolio of work!</p>
+  </section>
+
+{% endblock %}
+
+
+
+
+
+
