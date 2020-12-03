@@ -23,19 +23,13 @@
     <!-- End Project Specific Content Here-->
     <!-- Templates Go Here -->
     <template id="--global-onboarding-switch-template">
-        <div class="--global-onboarding-switch">
-            <s1>Switch Description</s1>
-            <label class="switch singular">
-                <input type="checkbox" name="Switch Name">
-                <span class="slider round"></span>
-            </label>
-        </div>
+        
     </template>
     <template id="--global-onboarding-template">
         <div class="--global-onboarding">
             <h3>Program Title</h3>
             <capt>Program Description</capt>
-            <ul></ul>
+            <ul>{% block widget %} {% endblock %}</ul>
             <button>Continue!</button>
         </div>
     </template>
