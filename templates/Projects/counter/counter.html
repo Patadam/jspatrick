@@ -1,3 +1,33 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Counter {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Counter</title>
+<!--<link rel="stylesheet" href="/static/projects/baconcipher/style.css">
+<script defer src="/static/projects/baconcipher/app.js"></script>-->
+<style>
+    #time{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+<!-- HTML Body Section -->
+{% block body %}
+<h3 id="time" class="colour"></h3>
+<script>
+    count = 0;
+    setInterval(function(){count++
+    document.querySelector("#time").innerHTML = count},1000)
+</script>
+{% endblock %}
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 
@@ -11,15 +41,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Title -->
     <title>Counter</title>
-    <style>
-        #time{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-            text-align: center;
-        }
-    </style>
+    
 </head>
 
 <body id="timemachine">
@@ -28,13 +50,9 @@
     </header>
 
 
-    <h3 id="time" class="colour"></h3>
+    
     <!-- Import External Javascript -->
-    <script>
-        count = 0;
-        setInterval(function(){count++
-        document.querySelector("#time").innerHTML = count},1000)
-    </script>
+    
 </body>
 
 </html>

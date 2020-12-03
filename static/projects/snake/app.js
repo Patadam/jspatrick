@@ -5,7 +5,7 @@ document.cookie.split(';').includes('data-theme=dark') ? document.querySelector(
 function start(call) {
     document.querySelector("#inputSpeedDOM").checked ? speed = 20 : speed = 150;
     bodyCollision = document.querySelector("#inputCollisionDOM").checked;
-    call.parentElement.classList.add("hidden");
+    call.parentElement.classList.add("--global-hidden");
     startGame();
 };
 

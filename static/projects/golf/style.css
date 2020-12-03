@@ -32,6 +32,10 @@ body {
     color: #D16262;
 }
 
+.info-text {
+    font-size: 20px;
+}
+
 header {
     position: absolute;
     top: 10%;
@@ -65,6 +69,7 @@ header {
 
 .widget-title {
     text-align: center;
+    font-size: 52px;
 }
 
 .clubs-widget {

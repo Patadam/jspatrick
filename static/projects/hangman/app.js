@@ -198,7 +198,7 @@ function updateInfo() {
     // adjusts the size of elements on the screen when the screen is smaller. I could use media queries or something but. nah
     // updates the hangman picture
     if (lives > 0 && lives <= 11) {
-        image.src = ("./hangman" + String(lives) + ".png");
+        image.src = ("/static/projects/hangman/images/hangman" + String(lives) + ".png");
     }
     if (window.innerWidth < 1200) {
         imageContainer.classList.add("element-hidden")

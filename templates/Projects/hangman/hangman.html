@@ -1,90 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends '/Global/Templates/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./sytle.css">
-    <title>Hangman</title>
-</head>
+<!-- Header -->
+{% block header %} Hangman {% endblock %}
 
-<body>
-    <div id="popup-toast">
-        <h3 class="popup-text">Difficulty</h3>
-        <ul id="popup-container-difficulty">
-            <button class="popup-btn btn-disabled" id="popup-btn-easy">Easy</button>
-            <button class="popup-btn btn-disabled" id="popup-btn-moderate">Moderate</button>
-            <button class="popup-btn btn-disabled" id="popup-btn-hard">Hard</button>
-        </ul>
-        <h3 class="popup-text">Enter a word<br><span>or leave blank to get a random word</span></h3>
-        <div id="popup-container-custom">
-            <input type="text" id="popup-input">
-        </div>
-        <h3 class="popup-text">How many lives do you want<br><span>or leave blank to get a default 8</span></h3>
-        <div id="popup-container-lives">
-            <input type="text" id="popup-lives-input">
-        </div>
-        <button id="popup-submit">Submit</button>
-        <h3 class="popup-text" id="replay-text"></h3>
+<!-- HTML Head Section -->
+{% block head %}
+<title>Hangman</title>
+<link rel="stylesheet" href="/static/projects/hangman/sytle.css">
+<script defer src="/static/projects/hangman/app.js"></script>
+{% endblock %}
 
+<!-- HTML Body Section -->
+{% block body %}
+<div id="popup-toast">
+    <h3 class="popup-text">Difficulty</h3>
+    <ul id="popup-container-difficulty">
+        <button class="popup-btn btn-disabled" id="popup-btn-easy">Easy</button>
+        <button class="popup-btn btn-disabled" id="popup-btn-moderate">Moderate</button>
+        <button class="popup-btn btn-disabled" id="popup-btn-hard">Hard</button>
+    </ul>
+    <h3 class="popup-text">Enter a word<br><span>or leave blank to get a random word</span></h3>
+    <div id="popup-container-custom">
+        <input type="text" id="popup-input">
     </div>
-    <div id="popup-container-replay" class="hidden-element">
-        <button class="hidden-element" id="replay-btn"></button>
+    <h3 class="popup-text">How many lives do you want<br><span>or leave blank to get a default 8</span></h3>
+    <div id="popup-container-lives">
+        <input type="text" id="popup-lives-input">
     </div>
-    <div id="title-container">
-        <h2 id="return-title"><a href="./../../index.html">(#3) JS Hangman</a></h2>
-        <h1 id="title">JS Hangman</h1>
-    </div>
-    <div id="images">
-        <img id="img" src="./hangman11.png" alt="">
-    </div>
-    <div id="top-right-container">
-        <h3>Attempts Remaining</h3>
-        <h1 id="attempts-remaining-text">3</h1>
-    </div>
-    <main id="main-container">
-        <span class="content-lost element-hidden">You didn't guess the word in time<br><span class="span">the word
-                was</span></span>
-        <h1 id="content">______</h1>
-        <ul id="alphabet-list">
-            <li class="alphabet-li" id="lt-a">A</li>
-            <li class="alphabet-li" id="lt-b">B</li>
-            <li class="alphabet-li" id="lt-c">C</li>
-            <li class="alphabet-li" id="lt-d">D</li>
-            <li class="alphabet-li" id="lt-e">E</li>
-            <li class="alphabet-li" id="lt-f">F</li>
-            <li class="alphabet-li" id="lt-g">G</li>
-            <li class="alphabet-li" id="lt-h">H</li>
-            <li class="alphabet-li" id="lt-i">I</li>
-            <li class="alphabet-li" id="lt-j">J</li>
-            <li class="alphabet-li" id="lt-k">K</li>
-            <li class="alphabet-li" id="lt-l">L</li>
-            <li class="alphabet-li" id="lt-m">M</li>
-            <li class="alphabet-li" id="lt-n">N</li>
-            <li class="alphabet-li" id="lt-o">O</li>
-            <li class="alphabet-li" id="lt-p">P</li>
-            <li class="alphabet-li" id="lt-q">Q</li>
-            <li class="alphabet-li" id="lt-r">R</li>
-            <li class="alphabet-li" id="lt-s">S</li>
-            <li class="alphabet-li" id="lt-t">T</li>
-            <li class="alphabet-li" id="lt-u">U</li>
-            <li class="alphabet-li" id="lt-v">V</li>
-            <li class="alphabet-li" id="lt-w">W</li>
-            <li class="alphabet-li" id="lt-x">X</li>
-            <li class="alphabet-li" id="lt-y">Y</li>
-            <li class="alphabet-li" id="lt-z">Z</li>
-        </ul>
-    </main>
-    <div id="info-container">
-        <h3 class="info-text">Difficulty: <span id="info-difficulty" class="info-text-red">waiting...</span></h3>
-        <h3 class="info-text">Attempts Left: <span id="info-attempts" class="info-text-red">waiting...</span></h3>
-        <h3 class="info-text">Completion: <span id="info-completion" class="info-text-red">waiting...</span></h3>
-        <h3 class="info-text">Games Played: <span id="info-games-played" class="info-text-red">waiting...</span></h3>
-        <h3 class="info-text">Games Won: <span id="info-games-won" class="info-text-red">waiting...</span></h3>
-    </div>
-    <script src="./app.js"></script>
-</body>
+    <button id="popup-submit">Submit</button>
+    <h3 class="popup-text" id="replay-text"></h3>
 
-</html>
+</div>
+<div id="popup-container-replay" class="hidden-element">
+    <button class="hidden-element" id="replay-btn"></button>
+</div>
+<div id="images">
+    <img id="img" src="/static/projects/hangman/images/hangman11.png" alt="">
+</div>
+<div id="top-right-container">
+    <h3>Attempts Remaining</h3>
+    <h1 id="attempts-remaining-text">3</h1>
+</div>
+<main id="main-container">
+    <span class="content-lost element-hidden">You didn't guess the word in time<br><span class="span">the word
+            was</span></span>
+    <h1 id="content">______</h1>
+    <ul id="alphabet-list">
+        <li class="alphabet-li" id="lt-a">A</li>
+        <li class="alphabet-li" id="lt-b">B</li>
+        <li class="alphabet-li" id="lt-c">C</li>
+        <li class="alphabet-li" id="lt-d">D</li>
+        <li class="alphabet-li" id="lt-e">E</li>
+        <li class="alphabet-li" id="lt-f">F</li>
+        <li class="alphabet-li" id="lt-g">G</li>
+        <li class="alphabet-li" id="lt-h">H</li>
+        <li class="alphabet-li" id="lt-i">I</li>
+        <li class="alphabet-li" id="lt-j">J</li>
+        <li class="alphabet-li" id="lt-k">K</li>
+        <li class="alphabet-li" id="lt-l">L</li>
+        <li class="alphabet-li" id="lt-m">M</li>
+        <li class="alphabet-li" id="lt-n">N</li>
+        <li class="alphabet-li" id="lt-o">O</li>
+        <li class="alphabet-li" id="lt-p">P</li>
+        <li class="alphabet-li" id="lt-q">Q</li>
+        <li class="alphabet-li" id="lt-r">R</li>
+        <li class="alphabet-li" id="lt-s">S</li>
+        <li class="alphabet-li" id="lt-t">T</li>
+        <li class="alphabet-li" id="lt-u">U</li>
+        <li class="alphabet-li" id="lt-v">V</li>
+        <li class="alphabet-li" id="lt-w">W</li>
+        <li class="alphabet-li" id="lt-x">X</li>
+        <li class="alphabet-li" id="lt-y">Y</li>
+        <li class="alphabet-li" id="lt-z">Z</li>
+    </ul>
+</main>
+<div id="info-container">
+    <h3 class="info-text">Difficulty: <span id="info-difficulty" class="info-text-red">waiting...</span></h3>
+    <h3 class="info-text">Attempts Left: <span id="info-attempts" class="info-text-red">waiting...</span></h3>
+    <h3 class="info-text">Completion: <span id="info-completion" class="info-text-red">waiting...</span></h3>
+    <h3 class="info-text">Games Played: <span id="info-games-played" class="info-text-red">waiting...</span></h3>
+    <h3 class="info-text">Games Won: <span id="info-games-won" class="info-text-red">waiting...</span></h3>
+</div>
+{% endblock %}
+
+

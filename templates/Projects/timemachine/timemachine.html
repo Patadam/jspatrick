@@ -1,38 +1,31 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+{% extends '/Global/Templates/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Import CSS Styles -->
-    <link rel="stylesheet" href="./../../styles/shared/global.css">
-    <link rel="stylesheet" href="./timemachine.css">
-    <!-- Import Icon Styles Library -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- Title -->
-    <title>Time Machine</title>
-    <style>
-        #time{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%,-50%);
-            text-align: center;
-        }
-    </style>
-</head>
+<!-- Header -->
+{% block header %} Time Machine {% endblock %}
 
-<body id="timemachine">
-    <header class="global-header">
-        <h4 class="h4-dark"><a href="./../../index.html">Time Machine</a></h4>
-    </header>
+<!-- HTML Head Section -->
+{% block head %}
+<title>Time Machine</title>
+<!--<link rel="stylesheet" href="/static/projects/timemachine/">
+<script defer src="/static/projects/timemachine//app.js"></script>-->
+<style>
+    #time{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+</style>
+{% endblock %}
 
-
-    <h3 id="time" class="colour"></h3>
+<!-- HTML Body Section -->
+{% block body %}
+<h3 id="time" class="colour"></h3>
     <!-- Import External Javascript -->
     <script>
         setInterval(function(){document.querySelector("#time").innerHTML = new Date(); },1000)
     </script>
-</body>
+{% endblock %}
 
-</html>
+ 
