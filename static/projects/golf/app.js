@@ -21,7 +21,7 @@ function getRandom(min, max) {
 
 // some "borrowed" code
 function setCookie(cname, cvalue) {
-    document.cookie = cname + "=" + cvalue + ";" + ";path=/";
+    document.cookie = cname + "=" + cvalue + ";" + ";path=/templates/projects/golf/";
 }
 
 function getCookie(cname) {

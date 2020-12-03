@@ -20,6 +20,7 @@
 
 // Collect Theme Cookies or Set Theme Cookies
 document.cookie.split(';').includes('data-theme=dark') ? document.querySelector("html").setAttribute("data-theme", "dark") : document.cookie = "data-theme=light; path=/";
+document.cookie.split(';').includes('data-theme=dark') ? document.querySelector(".switch input").checked = true : document.querySelector(".switch input").checked = false;
 
 // Theme Toggle 
 const toggleTheme = () => {
