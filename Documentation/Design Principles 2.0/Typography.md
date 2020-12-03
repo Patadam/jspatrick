@@ -45,14 +45,14 @@ Size: 20px
 Responsive Size: 1.042vw
 Letter spacing: 0.15px
 
-## Subtitle 1
+## Subtitle 1 <s1></s1>
 Font: Roboto Slab
 Weight: Normal
 Size: 16px
 Responsive Size: 0.833vw
 Letter spacing: 0.15px
 
-## Subtitle 2
+## Subtitle 2 <s2></s2>
 Font: Roboto Slab
 Weight: Medium
 Size: 14px
@@ -80,7 +80,7 @@ Size: 14px
 Resonsive Size: 0.729vw
 Letter spacing: 1.25px
 
-## Caption
+## Caption <capt></capt>
 Font: Raleway
 Weight: Normal
 Size: 12px
