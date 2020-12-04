@@ -1,3 +1,6 @@
+document.body.appendChild(document.querySelector("#--global-onboarding-template").content.cloneNode(true));
+
+
 // load document references
 var docNum1 = document.querySelector("#num1-span");
 var docNum2 = document.querySelector("#num2-span");
@@ -28,6 +31,7 @@ var trueAnswer = 0;
 var difficulty = ("");
 
 // start program
+/*
 // add event listener to document button to launch code if all pre-requisites are met
 docButtonIntro.addEventListener('click', function () {
     inputValue = docInputIntro.value;
@@ -66,6 +70,7 @@ docButtonIntro.addEventListener('click', function () {
         game();
     }
 });
+*/
 
 // function returns the percentage value of the users correct answers
 function getPercent(score, question) {
@@ -177,12 +182,22 @@ docButton.addEventListener('click', function () {
 
 var difficulty, questionQty, minNum, maxNum;
 
-function handleOnboardingEvent() {
+
+handleOnboardingEvent = () => {
     globalHide(".--global-onboarding");
     document.querySelector("#--value-HardMode").checked ? difficulty = "hard" : difficulty = "easy";
-    questionQty = document.querySelector("#--value-QuestionQty").value;
-    minNum = document.querySelector("#--value-SmallNum").value;
-    maxNum = document.querySelector("#--value-LargeNum").vlaue;
+    questionQty = parseInt(document.querySelector("#--value-QuestionQty").value);
+    minNum = parseInt(document.querySelector("#--value-SmallNum").value);
+    maxNum = parseInt(document.querySelector("#--value-LargeNum").value);
+    // Code from old stuff
+    introPopup.classList.add("--global-hidden");
+    score = 0;
+    question = 0;
+    totalQuestions = questionQty;
+    minValue = minNum;
+    maxValue = maxNum;
+    updateInfo();
+    game();
 }
 
 
