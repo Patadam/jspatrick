@@ -171,3 +171,14 @@ docButton.addEventListener('click', function () {
         docInput.classList.add("hidden-element")
     }
 });
+
+
+
+
+var difficulty, questionQty, minNum, maxNum;
+handleOnboardingEvent = () =>{
+    document.querySelector("#--value-HardMode").checked ? difficulty = "hard" : difficulty = "easy";
+    questionQty = document.querySelector("#--value-QuestionQty").value;
+    minNum = document.querySelector("#--value-SmallNum").value;
+    maxNum = document.querySelector("#--value-LargeNum").vlaue;
+}

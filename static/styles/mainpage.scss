@@ -27,6 +27,7 @@ html {
     --white: #F1F1F1;
     --black: #202020;
     --outline: #cecece;
+    --onPrimaryWhite: #f1f1f1;
 }
 
 /* Dark Theme Settings */
@@ -43,6 +44,7 @@ html[data-theme=dark] {
     --white: #202020;
     --black: #f1f1f1;
     --outline: #cecece;
+    --onPrimaryWhite: #f1f1f1
 }
 
 
@@ -161,6 +163,13 @@ a {
     font-size: inherit;
 }
 
+input {
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
 /* End Headlines & Typography */
 
 /* Global Hidden Styles */
@@ -190,30 +199,74 @@ a {
 }
 
 .--global-onboarding {
-    width: 60vw;
+    width: 65vw;
     height: 45vh;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     background: var(--surface-dark);
-    border-radius: 4px;
+    border-radius: 8px;
     display: grid;
-    padding: 1rem;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto 1fr;
-    grid-template-areas: "h3 h3" "capt capt" "ul button";
-    h3{
+    padding: 2rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    grid-template-columns: 1fr 4rem auto;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "h3 h3 h3""capt capt capt""ul ul ul""button button button";
+
+    h3 {
         grid-area: h3;
+        padding-bottom: 0.4rem;
     }
-    capt{
+
+    capt {
         grid-area: capt;
     }
+
     ul {
         grid-area: ul;
         display: grid;
+        list-style: none;
         grid-template-columns: 1fr;
-        place-content: space-between start;
+        gap: 1rem;
+        padding: 1rem 0;
+        place-content: start;
+
+        div {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            place-items: start space-between;
+            height: min-content;
+        }
+    }
+
+    button {
+        grid-area: button;
+        place-self: end center;
+        padding: 0.8rem 3.2rem;
+        outline: none;
+        border: none;
+        border-radius: 8px;
+        color: var(--onPrimaryWhite);
+        background: var(--primary);
+        cursor: pointer;
+    }
+
+    .--global-onboarding-input {
+        input {
+            width: 100%;
+            background: inherit;
+            outline: none;
+            border: none;
+            border-bottom: 2px solid var(--outline);
+            padding: 0.2rem 0.4rem;
+
+            &:focus-within {
+                border-bottom: 1px solid var(--black);
+                margin-bottom: 1px;
+            }
+
+        }
     }
 }
 

@@ -48,12 +48,30 @@
 </div>
 {% endblock %}
 
+
+
+{% block onboardingtitle %}Math Solver{% endblock %}
+{% block onboardingdesc %}Compete against yourself to solve the most correct math equations with Math Solver{% endblock %}
+
 {% block widget %}
+<div class="--global-onboarding-input">
+    <s1>Question Quantity</s1>
+    <input placeholder="text here" type="number" value="10" id="--value-QuestionQty">
+</div>
+<div class="--global-onboarding-input">
+    <s1>Smallest Number</s1>
+    <input placeholder="text here" type="number" value="1" id="--value-SmallNum">
+</div>
+<div class="--global-onboarding-input">
+    <s1>Largest Number</s1>
+    <input placeholder="text here" type="number" value="10" id="--value-LargeNum">
+</div>
 <div class="--global-onboarding-switch">
-    <s1>Switch Description</s1>
+    <s1>Enable Hard Mode</s1>
     <label class="switch singular">
-        <input type="checkbox" name="Switch Name">
+        <input type="checkbox" name="Switch Name" id="--value-HardMode">
         <span class="slider round"></span>
     </label>
 </div>
+
 {% endblock %}
