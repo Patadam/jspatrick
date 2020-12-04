@@ -7,7 +7,7 @@
 const globalToggleHide = (target) => document.querySelector(target).classList.toggle("--global-hidden");
 
 // Hide Target Object (Targeting by class or ID "#id" or ".class")
-const globalHide = (target) => document.querySelectorAll(target).classList.add("--global-hidden");
+const globalHide = (target) => document.querySelector(target).classList.add("--global-hidden");
 
 // Parse the value this to hide the calling object, or this.parentElement to hide the parent element
 function globalHideSelf(target){target.classList.add("--global-hidden")};
