@@ -176,9 +176,16 @@ docButton.addEventListener('click', function () {
 
 
 var difficulty, questionQty, minNum, maxNum;
-handleOnboardingEvent = () =>{
+
+function handleOnboardingEvent() {
+    globalHide(".--global-onboarding");
     document.querySelector("#--value-HardMode").checked ? difficulty = "hard" : difficulty = "easy";
     questionQty = document.querySelector("#--value-QuestionQty").value;
     minNum = document.querySelector("#--value-SmallNum").value;
     maxNum = document.querySelector("#--value-LargeNum").vlaue;
+}
+
+
+handleMain = () => {
+
 }
