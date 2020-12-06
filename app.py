@@ -15,4 +15,4 @@ def not_found(event):
     return render_template("/Admin/Errors/404/404.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
