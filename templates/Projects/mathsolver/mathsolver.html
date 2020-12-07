@@ -12,25 +12,6 @@
 
 <!-- HTML Body Section -->
 {% block body %}
-<div class="notification-popup">
-    <h3>How Many Questions do you want?</h3>
-    <input id="popup-input-field" type="text">
-    <span id="alert-toast" class="hidden-element">You must enter a proper number</span>
-    <h3 id="difficulty-text">Select a difficulty</h3>
-    <div class="difficulty-container">
-        <input type="checkbox" name="difficulty" id="checkbox-hard">
-        <label id="label-hard" for="checkbox-hard">Hard</label>
-    </div>
-    <div class="range-container">
-        <label for="min-range-field" class="range-label">Min Number</label>
-        <input type="text" id="min-range-field">
-        <label for="max-range-field" class="range-label">Max Number</label>
-        <input type="text" id="max-range-field">
-        <span id="alert-toast-range" class="hidden-element">You must enter a proper number</span>
-    </div>
-
-    <button id="popup-input-btn">I'm Ready to Play!</button>
-</div>
 <div class="main-container">
     <h1 class="title info-text-red">Maths Solver</h1>
     <h1 id="content"><span id="num1-span">___</span><span id="method-span"> + </span> <span
