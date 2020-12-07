@@ -31,14 +31,14 @@ updateInfo = () => {
     infoSuccess.innerHTML = `${getPercent()}% (${score} of ${question} completed successfully)`;
 }
 
-cotentDOM = document.querySelector("#content");
+contentDOM = document.querySelector("#content");
 
 game = () => {
     question++;
     updateInfo();
 
     [num1, num2] = [globalRandomInt(parseInt(minValue), parseInt(maxValue)), globalRandomInt(parseInt(minValue), parseInt(maxValue))];
-    difficult == "easy" ? method = globalRandomInt(1, 2) : method = globalRandomInt(1, 4);
+    difficulty == "easy" ? method = globalRandomInt(1, 2) : method = globalRandomInt(1, 4);
 
     method == 1 ? contentDOM.innerHTML = `____ + ${num2} = ${num1+num2}` : method == 2 ? contentDOM.innerHTML = `____ - ${num2} = ${num1-num2}` : method == 3 ? contentDOM.innerHTML = `____ x ${num2} = ${num1*num2}` : contentDOM.innerHTML = `____ / ${num2} = ${(num1/num2).toFixed(2)}`
 }
@@ -70,8 +70,8 @@ docButton.addEventListener('click', function () {
     gameOver = () => {
         updateInfo();
         contentText.innerHTML = "Game Over you got " + getPercent(score, question) + "%";
-        docButton.classList.add("hidden-element");
-        docInput.classList.add("hidden-element")
+        docButton.classList.add("--global-hidden");
+        docInput.classList.add("--global-hidden")
     }
     docInput.value == num1 ? correct() : incorrect();
     docInput.value = ('');
