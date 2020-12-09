@@ -49,7 +49,7 @@ handleOnboardingEvent = () => {
     minValue = parseInt(document.querySelector("#--value-SmallNum").value);
     maxValue = parseInt(document.querySelector("#--value-LargeNum").value);
     [score, question] = [0, 0];
-    introPopup.classList.add("--global-hidden");
+    try {introPopup.classList.add("--global-hidden");}catch(err){}; // This is the old code thing can probs get removed
     updateInfo();
     game();
 }
