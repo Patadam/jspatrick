@@ -1,0 +1,60 @@
+body {
+    display: grid;
+    min-height: 100vh;
+}
+
+#btd {
+    display: grid;
+    min-height: 70vh;
+    background: #f1f1f1;
+    place-self: end center;
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(22, 26px);
+        gap: 0.2rem;
+        padding: 0.4rem;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+        border-radius: 4px;
+    }
+
+    .widget {
+        height: 26px;
+        width: 26px;
+        background: lightblue;
+    }
+
+    .CowFarmker {
+        background: lightcoral !important;
+    }
+
+
+
+    .shop {
+        list-style: none;
+        position: absolute;
+        bottom: 2rem;
+        background: #f1f1f1;
+        left: 2rem;
+        right: 2rem;
+        padding: 1rem;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+        li {
+            padding: 0.3rem;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.16);
+            display: grid;
+            place-content: center;
+            font-weight: 600;
+            color: #404040;
+            background: #f7f7f7;
+            cursor: pointer;
+
+            &:hover {
+                background: #f1f1f1;
+            }
+        }
+    }
+}

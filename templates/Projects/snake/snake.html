@@ -1,0 +1,64 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Snake {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Snake</title>
+<link rel="stylesheet" href="/static/projects/snake/style.css">
+<script defer src="/static/projects/snake/app.js"></script>
+{% endblock %}
+
+
+
+
+<!-- HTML Body Section -->
+{% block body %}
+
+
+
+
+<div class="--global-widget">
+    <div>
+        <h4 class="semibold">JS Snake</h4>
+        <p class="light">Explore the world of my Javascript Snake as it make its way around my sname using AI</p>
+    </div>
+    <div class="options">
+        <li class="option-switch">
+            <p class="semibold">Speed</p>
+            <p class="small">Slow</p>
+            <label class="switch duo">
+                <input type="checkbox" id="inputSpeedDOM">
+                <span class="slider round duo"></span>
+            </label>
+            <p class="small">Fast</p>
+        </li>
+    </div>
+    <div class="options-other">
+        <li class="option-switch">
+            <p class="semibold">Body Collisions</p>
+            <label class="switch singular">
+                <input type="checkbox" id="inputCollisionDOM">
+                <span class="slider round"></span>
+            </label>
+        </li>
+        <li class="option-switch">
+            <p class="semibold">Advanced AI</p>
+            <label class="switch singular">
+                <input type="checkbox" id="inputAIDOM" disabled checked=true;>
+                <span class="slider round"></span>
+            </label>
+        </li>
+    </div>
+    <button onclick="start(this)">I'm Ready!</button>
+</div>
+<section id="snake">
+    <section class="main">
+        <button onclick="startGame()" class="button">Run Program</button>
+        <ul id="grid">
+
+        </ul>
+    </section>
+</section>
+{% endblock %}

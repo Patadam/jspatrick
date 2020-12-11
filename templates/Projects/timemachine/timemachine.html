@@ -1,0 +1,31 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Time Machine {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Time Machine</title>
+<!--<link rel="stylesheet" href="/static/projects/timemachine/">
+<script defer src="/static/projects/timemachine//app.js"></script>-->
+<style>
+    #time{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+</style>
+{% endblock %}
+
+<!-- HTML Body Section -->
+{% block body %}
+<h3 id="time" class="colour"></h3>
+    <!-- Import External Javascript -->
+    <script>
+        setInterval(function(){document.querySelector("#time").innerHTML = new Date(); },1000)
+    </script>
+{% endblock %}
+
+ 

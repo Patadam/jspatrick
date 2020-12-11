@@ -1,0 +1,73 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Stock Simulator {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Stock Simulator</title>
+<link rel="stylesheet" href="/static/projects/stocksimulator/style.css">
+<script defer src="/static/projects/stocksimulator/app.js"></script>
+{% endblock %}
+
+<!-- HTML Body Section -->
+{% block body %}
+
+<section class="section top-info-container">
+    <h3 class="info-heading">Stonk Market Information</h3>
+    <ul class="info-list">
+        <li class="item" id="avaliable-stocksDOM">
+            Available Stocks: <br><span class="target">!!!</span>
+        </li>
+        <li class="item" id="maxStocksDOM">
+            Max Stonks: <br><span class="target">!!!</span>
+        </li>
+        <li class="item" id="currentStockDOM">
+            Current Stonk: <br><span class="target">Apple</span>
+        </li>
+        <li class="item" id="bankBalanceDOM">
+            Bank Balance: <br><span>$</span><span class="target">$$$</span>
+        </li>
+    </ul>
+</section>
+<section class="section main-container">
+    <h1 class="info-main-title" id="hoursDOM"><span>12</span><br>Hours Remaining</h1>
+    <h2 class="info-main-subtitle" id="stockValueDOM">Current Stock Price is<br><span>$</span><span class="target">10</span></h2>
+    <div class="floating-cp">
+        <button class="action-button" onclick="handleBuyEvent()">Buy</button>
+        <button class="action-button" onclick="handleSellEvent()">Sell</button>
+        <button class="action-button" onclick="handleWaitEvent()">Wait 1 Hour</button>
+    </div>
+</section>
+<section class="section bottom-info-container">
+    <h3 class="info-heading">Your Information</h3>
+    <ul class="info-list">
+        <li class="item" id="stocksQtyDOM">
+            Your Stocks: <br><span class="target">0</span>
+        </li>
+        <li class="item" id="userBalanceDOM">
+            Your Balance: <br><span>$</span><span class="target">10</span>
+        </li>
+    </ul>
+</section>
+<section class="section popup-alert-container hidden">
+    <h2 class="info-main-subtitle" id="popupTypeDOM">How many stocks do you want to <span class="target">buy</span></h2>
+    <h3 class="info-heading" id="popupValueDOM">The Current Stock Value is: <span>$</span><span class="target">10</span></h3>
+    <input type="text" class="input" type="number">
+    <button class="action-button" onclick="handleSubmitEvent(this)">Submit</button>
+</section>
+<section class="section history-container">
+    <p id="history-text">
+        [12] Game Started
+    </p>
+</section>
+<section class="section upgrades-container">
+    <div class="upgrade-widget">
+        <i class="material-icons" alt="test">arrow_circle_up</i>
+    </div>
+    <div class="upgrade-widget">
+        <i class="material-icons">monetization_on</i>
+    </div>
+
+</section>
+{% endblock %}

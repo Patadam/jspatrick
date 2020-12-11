@@ -1,0 +1,58 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Math Solver {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Math Solver</title>
+<link rel="stylesheet" href="/static/projects/mathsolver/style.css">
+<script defer src="/static/projects/mathsolver/app.js"></script>
+{% endblock %}
+
+<!-- HTML Body Section -->
+{% block body %}
+<div class="main-container">
+    <h1 class="title info-text-red">Maths Solver</h1>
+    <h1 id="content"><span id="num1-span">___</span><span id="method-span"> + </span> <span
+            id="num2-span">256</span><span>
+            = </span><span id="result-span">512</span></h1>
+    <input id="input-field" type="text" class="">
+    <button id="input-btn">Answer</button>
+</div>
+
+<div class="info-container">
+    <h3 class="info-text">Difficulty: <span id="info-difficulty" class="info-text-red">waiting...</span></h3>
+    <h3 class="info-text">Question: <span id="info-question" class="info-text-red">waiting...</span></h3>
+    <h3 class="info-text">Success Rate: <span id="info-success" class="info-text-red">waiting...</span>
+    </h3>
+</div>
+{% endblock %}
+
+
+
+{% block onboardingtitle %}Math Solver{% endblock %}
+{% block onboardingdesc %}Compete against yourself to solve the most correct math equations with Math Solver{% endblock %}
+
+{% block widget %}
+<div class="--global-onboarding-input">
+    <s1>Question Quantity</s1>
+    <input placeholder="text here" type="number" value="10" id="--value-QuestionQty">
+</div>
+<div class="--global-onboarding-input">
+    <s1>Smallest Number</s1>
+    <input placeholder="text here" type="number" value="1" id="--value-SmallNum">
+</div>
+<div class="--global-onboarding-input">
+    <s1>Largest Number</s1>
+    <input placeholder="text here" type="number" value="10" id="--value-LargeNum">
+</div>
+<div class="--global-onboarding-switch">
+    <s1>Enable Hard Mode</s1>
+    <label class="switch singular">
+        <input type="checkbox" name="Switch Name" id="--value-HardMode">
+        <span class="slider round"></span>
+    </label>
+</div>
+
+{% endblock %}

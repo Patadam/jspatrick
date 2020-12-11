@@ -1,0 +1,28 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Cheque Writer {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Cheque Writer</title>
+<link rel="stylesheet" href="/static/projects/cheque writer/style.css">
+<script defer src="/static/projects/cheque writer/app.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+{% endblock %}
+
+<!-- HTML Body Section -->
+{% block body %}
+<main>
+    <div id="container">
+        <img src="/static/projects/cheque writer/images/chequeDetails.png" alt="" id="img-details">
+        <p id="content"><br>type your value below to get started!</p>
+    </div>
+
+</main>
+<footer>
+    <input type="number" name="" id="input-field">
+    <button type="submit" id="input-btn">Create Cheque</button>
+</footer>
+{% endblock %}
+

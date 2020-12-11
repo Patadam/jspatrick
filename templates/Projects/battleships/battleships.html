@@ -1,0 +1,36 @@
+{% extends '/Global/Templates/base.html' %}
+
+<!-- Header -->
+{% block header %} Battleships {% endblock %}
+
+<!-- HTML Head Section -->
+{% block head %}
+<title>Battleships</title>
+<link rel="stylesheet" href="/static/projects/battleships/battleships.css">
+<script defer src="/static/projects/battleships/battleships.js"></script>
+{% endblock %}
+
+
+
+
+<!-- HTML Body Section -->
+{% block body %}
+<h3 id="bs-info">Coming Soon! (lazy)</h3>
+<div class="intro-container">
+    <ul class="grid">
+
+    </ul>
+</div>
+
+<div class="global-widget">
+    <div>
+        <h4 class="semibold">Battleships</h4>
+        <p class="light">Fight off against friend or foe in a 1 vs 1 battle to rule the seas!</p>
+    </div>
+    <div class="options"></div>
+    <div class="options-other"></div>
+    <button onclick="start(this)">I'm Ready!</button>
+</div>
+{% endblock %}
+
+
