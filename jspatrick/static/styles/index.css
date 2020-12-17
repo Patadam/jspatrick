@@ -1,0 +1,45 @@
+/* Animation Introduction */
+
+.intro {
+    background: #101010;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.slider {
+    background: #404040;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+.intro-text {
+    color: #eeeeee;
+    font-size: 3rem;
+}
+
+.hide {
+    background: #101010;
+    overflow: hidden;
+}
+
+.hide span {
+    transform: translateY(100%);
+    display: inline-block;
+}
+
+/* Animation Title */
+.title-text {
+    /* transform: translateX(-100%); */
+    font-size: 2500px;
+    overflow: hidden;
+    opacity: 0;
+}
