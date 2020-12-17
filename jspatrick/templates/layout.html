@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS Styling -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/global.css') }}">
     <!-- Custom Styling -->
     <link rel="stylesheet" href="{{ style }}">
 
@@ -21,9 +21,13 @@
 
 <body>
 
-    {% block content %} {% endblock content %}
+    {% block content %} 
+    
+    {% endblock content %}
 
     <!-- Javascript -->
+    <script src="{{ url_for('static', filename='javascript/global.js')}}"></script>
+    <!-- Custom Javascript -->
     <script src="{{ javascript }}"></script>
 </body>
 
