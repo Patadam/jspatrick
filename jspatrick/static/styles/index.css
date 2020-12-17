@@ -3,7 +3,7 @@ main {
     background: url('/static/images/hero.jpg');
     background-size: cover;
     padding: 0 4rem;
-    
+
 }
 
 
@@ -53,5 +53,22 @@ main {
     left: 50%;
     transform: translate(-30%, -50%);
     color: rgb(62, 62, 62);
-    font-family: "Lobster", cursive;
+
+}
+
+.title {
+    position: fixed;
+    left: 4rem;
+    top: 30%;
+    transform: translateY(-30%);
+    color: #303030;
+}
+
+.title-text {
+    font-size: 64px;
+    color: #D16262;
+}
+
+.sub-title {
+    font-size: 34px;
 }
