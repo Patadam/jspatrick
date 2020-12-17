@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Styling -->
+    <link rel="stylesheet" href="#">
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="{{ style }}">
+
+    <!-- Title -->
+    {% if title %}
+        <title>JSPatrick - {{ title }}</title>
+    {% else %}
+        <title>JSPatrick</title>
+    {% endif %}
+</head>
+
+<body>
+
+    {% block content %} {% endblock content %}
+
+    <!-- Javascript -->
+    <script src="{{ javascript }}"></script>
+</body>
+
+</html>
