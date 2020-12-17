@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 app = Flask(__name__)
 
 # Dummy content
@@ -10,7 +10,7 @@ posts = [{},{}];
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    return render_template('home.html', style='/static/styles/index.css', javascript='/static/javascript/index.js')
 
 @app.route('/blog')
 def blog():
