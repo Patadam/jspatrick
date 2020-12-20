@@ -1,9 +1,8 @@
 from flask import Flask, render_template, url_for
+from forms import RegistrationForm, LoginForm
 app = Flask(__name__)
 
-# Dummy content
-posts = [{},{}];
-
+app.config['SECRET_KEY'] = '39a9d6e42cee4e1479994bccffe098d7'
 
 
 # Home Page Route
@@ -19,7 +18,7 @@ def about():
 
 @app.route('/blog')
 def blog():
-    return render_template('blog.html', posts=posts)
+    return render_template('blog.html', style='/static/styles/blog.css', javascript='/static/javascript/blog.js')
 
 
 if __name__ == '__main__':
