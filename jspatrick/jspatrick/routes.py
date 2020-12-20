@@ -1,9 +1,7 @@
-from flask import Flask, render_template, url_for, flash, redirect
-from forms import RegistrationForm, LoginForm
-app = Flask(__name__)
-
-app.config['SECRET_KEY'] = '39a9d6e42cee4e1479994bccffe098d7'
-
+from flask import render_template, url_for, flash, redirect
+from jspatrick.forms import RegistrationForm, LoginForm
+from jspatrick.models import User, Post
+from jspatrick import app
 
 # Home Page Route
 @app.route('/')
@@ -39,5 +37,5 @@ def login():
             flash('Login Unsuccessful. Plase check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+
