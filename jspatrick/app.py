@@ -12,6 +12,11 @@ posts = [{},{}];
 def home():
     return render_template('home.html', style='/static/styles/index.css', javascript='/static/javascript/index.js')
 
+@app.route('/about')
+def about():
+    return render_template('about.html', style='/static/styles/about.css', javascript='/static/javascript/about.js')
+
+
 @app.route('/blog')
 def blog():
     return render_template('blog.html', posts=posts)

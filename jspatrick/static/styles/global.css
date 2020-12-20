@@ -6,6 +6,7 @@
 }
 
 html {
+    background: #f7f7f7;
     --primary: #D16262;
     --onprimary: #f7f7f7;
     --text-mid: #303030;
@@ -51,7 +52,7 @@ a {
     position: relative;
     cursor: pointer;
     border: 2px solid #cecece;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
 }
 
 /* User Dropdown Menu Styling */
@@ -67,6 +68,7 @@ a {
     justify-items: center;
     z-index: 5;
     transform: translate(-82%, 12%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
 }
 
 .user-menu .options {
