@@ -12,6 +12,12 @@ html {
     --text-mid: #303030;
 }
 
+body {
+    display: grid;
+    grid-template-columns: 4rem repeat(6, 1fr) 4rem;
+    background: inherit;
+}
+
 nav {
     position: absolute;
     top: 0;
@@ -104,4 +110,21 @@ a {
 .hidden {
     display: none;
     visibility: hidden;
+}
+
+
+.content-section {
+    margin-top: 12vh;
+    grid-column: 2/6;
+}
+
+.content-section-full {
+    margin-top: 0;
+    grid-column: 1/-1;
+}
+
+.flash-alert {
+    padding: 0.2rem 0.4rem;
+    grid-column: 1/-1;
+    margin: 0.5rem 1rem;
 }
